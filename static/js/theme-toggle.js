@@ -6,7 +6,10 @@ function toggleTheme() {
         body.setAttribute('data-theme', 'colour1');
     }
     else if (currentTheme === 'colour1') {
-        body.setAttribute('data-theme', 'light');
+        body.setAttribute('data-theme', 'dark');
+    }
+    else if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'light')
     }
 }
 

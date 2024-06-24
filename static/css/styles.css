@@ -52,6 +52,11 @@ body[data-theme="light"] {
     color: #000000;
 }
 
+body[data-theme="dark"] {
+    background-color: #222222;
+    color: #fffafa;
+}
+
 body[data-theme="colour1"] {
     background-color: #708090;
     color: #fffafa;
