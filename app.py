@@ -91,7 +91,7 @@ def squad_overview():
     midfielders.sort(key=lambda x: x[sort_by], reverse=reverse)
     attackers.sort(key=lambda x: x[sort_by], reverse=reverse)
 
-    rectangle = {'id': 'squad_background', 'top': 25, 'left': 37.5}
+    rectangle = {'id': 'squad_background', 'top': 25, 'left': 30, 'width': 1705, 'height': 800}
 
     return render_template('squad_overview.html', rectangle=rectangle, goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
