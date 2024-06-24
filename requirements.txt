@@ -1,3 +1,4 @@
-Flask==2.1.1
-gunicorn==20.1.0
-flask_session==0.3.2
+Flask
+gunicorn
+flask_session
+beautifulsoup4
