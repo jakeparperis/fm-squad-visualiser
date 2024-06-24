@@ -102,7 +102,7 @@ def player_info_page():
     squad_data = session.get('squad_data', [])
 
     return render_template('player_info_page.html')
-
+#test
 
 if __name__ == '__main__':
     app.run(debug=True)
