@@ -43,6 +43,10 @@ h2 {
             margin-bottom: 10px;
 }
 
+h1 {
+    margin-top: 50px;
+}
+
 body[data-theme="light"] {
     background-color: #fffafa;
     color: #000000;
