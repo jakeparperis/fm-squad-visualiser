@@ -91,7 +91,7 @@ def squad_overview():
     midfielders.sort(key=lambda x: x[sort_by], reverse=reverse)
     attackers.sort(key=lambda x: x[sort_by], reverse=reverse)
 
-    rectangle = {'id': 'squad_background', 'top': 25, 'left': 30, 'width': 1705, 'height': 800}
+    rectangle = {'id': 'squad_background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
 
     return render_template('squad_overview.html', rectangle=rectangle, goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
@@ -101,7 +101,10 @@ def squad_overview():
 def player_info_page():
     squad_data = session.get('squad_data', [])
 
-    return render_template('player_info_page.html')
+    rectangle = {'id': 'squad_background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
+
+    return render_template('player_info_page.html', rectangle=rectangle)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
