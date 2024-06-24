@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM Squad Visualiser</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
+</head>
+
+<body data-theme="colour1">
+
+    <button id="theme-toggle-button">Toggle Theme</button>
+
+    <h1>FM Squad Visualiser</h1>
+
+    <!-- Flash handling -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".html">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if squad_data %}
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="sortTable('name')">Name</th>
+                    <th>Position</th>
+                    <th>Pace</th>
+                    <th>Shooting</th>
+                    <th>Passing</th>
+                    <th>Dribbling</th>
+                    <th>Defending</th>
+                    <th>Physical</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in squad_data %}
+                    <tr>
+                        <td>{{ player.Name }}</td>
+                        <td>{{ player.Position }}</td>
+                        <td>{{ player.Pace }}</td>
+                        <td>{{ player.Shooting }}</td>
+                        <td>{{ player.Passing }}</td>
+                        <td>{{ player.Dribbling }}</td>
+                        <td>{{ player.Defending }}</td>
+                        <td>{{ player.Physical }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
