@@ -354,3 +354,43 @@ class Player:
             ovr.append(striker)
 
         return ovr
+
+    def calc_sm_wf(self):
+        weak_foot = ""
+        skill_moves = 0
+
+        if 18 <= self.flair <= 20:
+            skill_moves = 5
+        elif 15 <= self.flair <= 17:
+            skill_moves = 4
+        elif 12 <= self.flair <= 14:
+            skill_moves = 3
+        elif 9 <= self.flair <= 11:
+            skill_moves = 2
+        else:
+            skill_moves = 1
+
+        if self.pref_foot == "Right":
+            if self.left_foot == "Very Strong" or self.left_foot == "Strong":
+                weak_foot = 5
+            elif self.left_foot == "Fairly Strong":
+                weak_foot = 4
+            elif self.left_foot == "Reasonable":
+                weak_foot = 3
+            elif self.left_foot == "Weak":
+                weak_foot = 2
+            else:
+                weak_foot = 1
+        else:
+            if self.right_foot == "Very Strong" or self.right_foot == "Strong":
+                weak_foot = 5
+            elif self.right_foot == "Fairly Strong":
+                weak_foot = 4
+            elif self.right_foot == "Reasonable":
+                weak_foot = 3
+            elif self.right_foot == "Weak":
+                weak_foot = 2
+            else:
+                weak_foot = 1
+
+        return skill_moves, weak_foot
