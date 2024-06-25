@@ -5,15 +5,17 @@ from process_squad import initialise_squad, store_positions, calculate_player_in
 import player
 
 app = Flask(__name__, static_url_path='/static')
-app.secret_key = os.urandom(24)
+secret_key = os.urandom(32)
 
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SECRET_KEY'] = 'supersecretkey'
+app.config['SECRET_KEY'] = secret_key
 Session(app)
 
 
 @app.route('/', methods=['GET','POST'])
 def index():
+    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
+
     upload_success = True
 
     if request.method == 'POST':
@@ -74,7 +76,7 @@ def index():
             return redirect(url_for('squad_overview'))
 
         return redirect(url_for('index'))
-    return render_template('index.html', title='Home Page')
+    return render_template('index.html', rectangle=rectangle, title='Home Page')
 
 
 @app.route('/squad_overview', methods=['GET'])
@@ -103,7 +105,7 @@ def squad_overview():
     midfielders.sort(key=lambda x: x[sort_by], reverse=reverse)
     attackers.sort(key=lambda x: x[sort_by], reverse=reverse)
 
-    rectangle = {'id': 'squad_background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
+    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
 
     return render_template('squad_overview.html', rectangle=rectangle, goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
@@ -111,11 +113,29 @@ def squad_overview():
 
 @app.route('/player_info_page', methods=['GET'])
 def player_info_page():
+    player_id = request.args.get('player_id')
     squad_data = session.get('squad_data', [])
 
-    rectangle = {'id': 'squad_background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
+    for player_data in squad_data:
+        if player_data['Player ID'] == player_id:
+            player = player_data
+            break
 
-    return render_template('player_info_page.html', rectangle=rectangle)
+    if player['Injury'] == "-":
+        player['Injury'] = ""
+
+    if player['Position'] == "Goalkeeper":
+        player['Position'] = "GK"
+    elif player['Position'] == "Midfielder":
+        player['Position'] = "MID"
+    elif player['Position'] == "Defender":
+        player['Position'] = "DEF"
+    elif player['Position'] == "Attacker":
+        player['Position'] = "ATT"
+
+    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
+
+    return render_template('player_info_page.html', rectangle=rectangle, player=player)
 
 
 if __name__ == '__main__':
