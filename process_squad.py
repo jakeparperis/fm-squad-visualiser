@@ -59,12 +59,24 @@ def calculate_player_info(squad):
         nation = player.get_nationality()
         name = player.get_name()
         age = player.get_age()
+        club = player.get_club()
+        division = player.get_division()
+        squad_number = player.get_squad_num()
+        personality = player.get_personality()
         pac = player.calculate_pace()
         sho = player.calculate_shooting()
         pas = player.calculate_passing()
         dri = player.calculate_dribbling()
         d3f = player.calculate_defending()
         phy = player.calculate_physical()
+        skill_moves, weak_foot = player.calc_sm_wf()
+        pref_foot = player.get_pref_foot()
+        height = player.get_height()
+        weight = player.get_weight()
+        transfer_value = player.get_transfer_val()
+        wage = player.get_wage()
+        injury = player.get_injury()
+
         position_overalls = player.calculate_overall()
 
         best_overall = 0
@@ -84,6 +96,10 @@ def calculate_player_info(squad):
                             'Nation': nation,
                             'Name': name,
                             'Age': age,
+                            'Club': club,
+                            'Division': division,
+                            'Squad Number': squad_number,
+                            'Personality': personality,
                             'Best Overall': best_overall,
                             'Position Overalls': position_overalls,
                             'Pace': pac,
@@ -91,5 +107,13 @@ def calculate_player_info(squad):
                             'Passing': pas,
                             'Dribbling': dri,
                             'Defending': d3f,
-                            'Physical': phy})
+                            'Physical': phy,
+                            'Skill Moves': skill_moves,
+                            'Weak Foot': weak_foot,
+                            'Preferred Foot': pref_foot,
+                            'Height': height,
+                            'Weight': weight,
+                            'Transfer Value': transfer_value,
+                            'Wage': wage,
+                            'Injury': injury})
     return player_info

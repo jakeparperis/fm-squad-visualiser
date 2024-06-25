@@ -41,6 +41,10 @@ def index():
                     'Nation': info['Nation'],
                     'Name': info['Name'],
                     'Age': info['Age'],
+                    'Club': info['Club'],
+                    'Division': info['Division'],
+                    'Squad Number': info['Squad Number'],
+                    'Personality': info['Personality'],
                     'Best Overall': info['Best Overall'],
                     'Position Overalls': info['Position Overalls'],
                     'Position': position['Position'],
@@ -50,6 +54,14 @@ def index():
                     'Dribbling': info['Dribbling'],
                     'Defending': info['Defending'],
                     'Physical': info['Physical'],
+                    'Skill Moves': info['Skill Moves'],
+                    'Weak Foot': info['Weak Foot'],
+                    'Preferred Foot': info['Preferred Foot'],
+                    'Height': info['Height'],
+                    'Weight': info['Weight'],
+                    'Transfer Value': info['Transfer Value'],
+                    'Wage': info['Wage'],
+                    'Injury': info['Injury']
                 }
                 squad_data.append(player_data)
 
