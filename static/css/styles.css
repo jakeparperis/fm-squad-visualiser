@@ -3,6 +3,10 @@ body {
     font-family: "Roboto Light", sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 th {
     text-align: center;
     font-family: "Roboto Light", sans-serif;
@@ -15,7 +19,14 @@ ul {
     text-align: center;
 }
 
-li {
+.player-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.player-clickable {
     margin-bottom: 10px;
     background-color: #3a3a3a;
     color: #fff;
@@ -28,7 +39,7 @@ li {
     text-align: center;
 }
 
-li:hover {
+.player-clickable:hover {
             background-color: #555;
 }
 
@@ -49,7 +60,7 @@ h1 {
 
 body[data-theme="light"] {
     background-color: #fffafa;
-    color: #000000;
+    color: #fffafa;
 }
 
 body[data-theme="dark"] {
