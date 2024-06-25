@@ -73,7 +73,7 @@ def calculate_player_info(squad):
         pref_foot = player.get_pref_foot()
         height = player.get_height()
         weight = player.get_weight()
-        transfer_value = player.get_transfer_val()
+        transfer_value = player.calc_transfer_val()
         wage = player.get_wage()
         injury = player.get_injury()
 

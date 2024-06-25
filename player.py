@@ -394,3 +394,31 @@ class Player:
                 weak_foot = 1
 
         return skill_moves, weak_foot
+
+    def calc_transfer_val(self):
+        transfer_value_range = self.transfer_val
+        base = ""
+        max_value = ""
+
+        if "M" in transfer_value_range:
+            base = "m"
+        elif "K" in transfer_value_range:
+            base = "k"
+        currency = transfer_value_range[0]
+
+        chars = []
+        startpoint = 0
+
+        for i in range(len(transfer_value_range)):
+            current_char = transfer_value_range[i]
+            chars.append(current_char)
+            if current_char == "-":
+                startpoint = i
+        for j in range(startpoint, len(chars)):
+            current_char = chars[j]
+            if current_char.isdigit() or current_char == ".":
+                max_value += current_char
+
+        transfer_value = currency + max_value + base
+
+        return transfer_value
