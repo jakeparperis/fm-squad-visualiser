@@ -47,6 +47,12 @@ def index():
                     'Division': info['Division'],
                     'Squad Number': info['Squad Number'],
                     'Personality': info['Personality'],
+                    'International Appearances': info['International Appearances'],
+                    'International Goals': info['International Goals'],
+                    'Season Appearances': info['Season Appearances'],
+                    'Average Rating': info['Average Rating'],
+                    'Season Goals': info['Season Goals'],
+                    'Season Assists': info['Season Assists'],
                     'Best Overall': info['Best Overall'],
                     'Position Overalls': info['Position Overalls'],
                     'Position': position['Position'],
@@ -121,8 +127,21 @@ def player_info_page():
             player = player_data
             break
 
+    # Deal with "-" in player attributes
     if player['Injury'] == "-":
-        player['Injury'] = ""
+        player['Injury'] = "Not Injured"
+    if player['International Appearances'] == "-":
+        player['International Appearances'] = "0"
+    if player['International Goals'] == "-":
+        player['International Goals'] = "0"
+    if player['Season Appearances'] == "-":
+        player['Season Appearances'] = "0"
+    if player['Average Rating'] == "-":
+        player['Average Rating'] = "0"
+    if player['Season Goals'] == "-":
+        player['Season Goals'] = "0"
+    if player['Season Assists'] == "-":
+        player['Season Assists'] = "0"
 
     if player['Position'] == "Goalkeeper":
         player['Position'] = "GK"
