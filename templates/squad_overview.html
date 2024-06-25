@@ -16,9 +16,9 @@
     <div id="{{ rectangle.id }}" class="rounded-rectangle" style="top: {{ rectangle.top }}px; left: {{ rectangle.left }}px; width: {{ rectangle.width }}px; height: {{ rectangle.height }}px; ">
         <div class="column">
             <h2>Goalkeepers</h2>
-            <ul>
+            <ul class="player-list">
                 {% for player in goalkeepers %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                    <li class="player-clickable" onclick="viewPlayer('{{ player['Player ID'] }}')">
                         <img class="flag" src="{{ url_for('static', filename='img/flags/' + player['Nation'] + '.png') }}">
                         {{ player['Name'] }} {{ player['Best Overall'] }}
                     </li>
@@ -28,9 +28,9 @@
 
         <div class="column">
             <h2>Defenders</h2>
-            <ul>
+            <ul class="player-list">
                 {% for player in defenders %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                    <li class="player-clickable"  onclick="viewPlayer('{{ player['Player ID'] }}')">
                         <img class="flag" src="{{ url_for('static', filename='img/flags/' + player['Nation'] + '.png') }}">
                         {{ player['Name'] }} {{ player['Best Overall'] }}
                     </li>
@@ -40,9 +40,9 @@
 
         <div class="column">
             <h2>Midfielders</h2>
-            <ul>
+            <ul class="player-list">
                 {% for player in midfielders %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                    <li class="player-clickable"  onclick="viewPlayer('{{ player['Player ID'] }}')">
                         <img class="flag" src="{{ url_for('static', filename='img/flags/' + player['Nation'] + '.png') }}">
                         {{ player['Name'] }} {{ player['Best Overall'] }}
                     </li>
@@ -52,9 +52,9 @@
 
         <div class="column">
             <h2>Attackers</h2>
-            <ul>
+            <ul class="player-list">
                 {% for player in attackers %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                    <li class="player-clickable"  onclick="viewPlayer('{{ player['Player ID'] }}')">
                         <img class="flag" src="{{ url_for('static', filename='img/flags/' + player['Nation'] + '.png') }}">
                         {{ player['Name'] }} {{ player['Best Overall'] }}
                     </li>
