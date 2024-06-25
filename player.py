@@ -3,10 +3,10 @@ import math
 
 class Player:
     def __init__(self, id, name, position, age, nationality, personality, squad_num, club, division,
-                 transfer_val, wage, injury, height, weight, left_foot, right_foot, pref_foot,
-                 acceleration, aerial_reach, aggression, agility, anticipation, balance, bravery,
-                 command_of_area, communication, composure, concentration, corners, crossing, decisions,
-                 determination, dribbling, eccentricity, finishing, first_touch, flair, free_kicks,
+                 transfer_val, wage, injury, height, weight, left_foot, right_foot, pref_foot, int_caps, int_goals,
+                 szn_apps, avg_rating, szn_goals, szn_assists, acceleration, aerial_reach, aggression, agility,
+                 anticipation, balance, bravery, command_of_area, communication, composure, concentration, corners,
+                 crossing, decisions, determination, dribbling, eccentricity, finishing, first_touch, flair, free_kicks,
                  handling, heading, jumping_reach, kicking, leadership, long_shots, long_throws, marking,
                  natural_fitness, off_the_ball, one_on_ones, pace, passing, penalties, positioning, punching,
                  reflexes, rushing_out, stamina, strength, tackling, teamwork, technique, throwing, vision,
@@ -29,6 +29,12 @@ class Player:
         self.left_foot = left_foot
         self.right_foot = right_foot
         self.pref_foot = pref_foot
+        self.int_caps = int(int_caps)
+        self.int_goals = int(int_goals)
+        self.szn_apps = int(szn_apps)
+        self.avg_rating = float(avg_rating)
+        self.szn_goals = int(szn_goals)
+        self.szn_assists = int(szn_assists)
         self.acceleration = int(acceleration)
         self.aerial_reach = int(aerial_reach)
         self.aggression = int(aggression)
@@ -129,6 +135,24 @@ class Player:
 
     def get_pref_foot(self):
         return self.pref_foot
+
+    def get_int_caps(self):
+        return self.int_caps
+
+    def get_int_goals(self):
+        return self.int_goals
+
+    def get_szn_apps(self):
+        return self.szn_apps
+
+    def get_avg_rating(self):
+        return self.avg_rating
+
+    def get_szn_goals(self):
+        return self.szn_goals
+
+    def get_szn_assists(self):
+        return self.szn_assists
 
     # Conversion calculation
 

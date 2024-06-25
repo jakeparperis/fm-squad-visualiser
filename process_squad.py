@@ -63,6 +63,12 @@ def calculate_player_info(squad):
         division = player.get_division()
         squad_number = player.get_squad_num()
         personality = player.get_personality()
+        int_caps = player.get_int_caps()
+        int_goals = player.get_int_goals()
+        szn_apps = player.get_szn_apps()
+        avg_rating = player.get_avg_rating()
+        szn_goals = player.get_szn_goals()
+        szn_assists = player.get_szn_assists()
         pac = player.calculate_pace()
         sho = player.calculate_shooting()
         pas = player.calculate_passing()
@@ -100,6 +106,12 @@ def calculate_player_info(squad):
                             'Division': division,
                             'Squad Number': squad_number,
                             'Personality': personality,
+                            'International Appearances': int_caps,
+                            'International Goals': int_goals,
+                            'Season Appearances': szn_apps,
+                            'Average Rating': avg_rating,
+                            'Season Goals': szn_goals,
+                            'Season Assists': szn_assists,
                             'Best Overall': best_overall,
                             'Position Overalls': position_overalls,
                             'Pace': pac,
