@@ -14,8 +14,6 @@ Session(app)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
-
     upload_success = True
 
     if request.method == 'POST':
@@ -82,7 +80,7 @@ def index():
             return redirect(url_for('squad_overview'))
 
         return redirect(url_for('index'))
-    return render_template('index.html', rectangle=rectangle, title='Home Page')
+    return render_template('index.html', title='Home Page')
 
 
 @app.route('/squad_overview', methods=['GET'])
@@ -111,9 +109,7 @@ def squad_overview():
     midfielders.sort(key=lambda x: x[sort_by], reverse=reverse)
     attackers.sort(key=lambda x: x[sort_by], reverse=reverse)
 
-    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
-
-    return render_template('squad_overview.html', rectangle=rectangle, goalkeepers=goalkeepers,
+    return render_template('squad_overview.html', goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
 
 
@@ -154,9 +150,7 @@ def player_info_page():
     elif player['Position'] == "Attacker":
         player['Position'] = "ATT"
 
-    rectangle = {'id': 'background', 'top': 40, 'left': 120, 'width': 1620, 'height': 760}
-
-    return render_template('player_info_page.html', rectangle=rectangle, player=player)
+    return render_template('player_info_page.html', player=player)
 
 
 if __name__ == '__main__':
