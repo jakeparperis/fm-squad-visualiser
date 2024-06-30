@@ -74,21 +74,21 @@ ul {
 
 .defender-column {
     position: absolute;
-    left: 32.5%;
+    left: 31.9%;
     top: 2.5%;
     text-align: center;
 }
 
 .midfielder-column {
     position: absolute;
-    left: 57.5%;
+    left: 56.3%;
     top: 2.5%;
     text-align: center;
 }
 
 .attacker-column {
     position: absolute;
-    left: 82.5%;
+    left: 80.625%;
     top: 2.5%;
     text-align: center;
 }
