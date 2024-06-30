@@ -150,7 +150,7 @@ def player_info_page():
     elif player['Position'] == "Attacker":
         player['Position'] = "ATT"
 
-    return render_template('player_info_page.html', player=player)
+    return render_template('player_info.html', player=player)
 
 
 if __name__ == '__main__':
