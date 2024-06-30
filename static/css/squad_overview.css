@@ -57,6 +57,7 @@ body[data-theme="colour1"] {
     height: auto;
     width: auto;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 ul {
