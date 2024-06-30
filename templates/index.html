@@ -10,9 +10,12 @@
 
 <body data-theme="dark">
 
-    <button class="theme-toggle-button" id="theme-toggle-button">Toggle Theme</button>
+    <div class="theme-button-container">
+        <button class="theme-button" id="theme-toggle-button">Toggle Theme</button>
+    </div>
 
-<h1>FM Squad Visualiser</h1>
+    <div class="background-rectangle">
+        <h1>FM Squad Visualiser</h1>
 
         <!-- Flash handling -->
         {% with messages = get_flashed_messages() %}
@@ -27,7 +30,9 @@
 
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept=".html">
-            <input type="submit" value="Upload">
+            <input class="upload-button" type="submit" value="Upload">
         </form>
+    </div>
+
 </body>
 </html>

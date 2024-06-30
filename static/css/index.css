@@ -1,22 +1,35 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto Light", sans-serif;
+}
+
 body[data-theme="light"] {
     background-color: #fffafa;
-    color: #fffafa;
+    color: #222222;
 }
 
 body[data-theme="dark"] {
     background-color: #222222;
-    color: #fffafa;
+    color: #222222;
 }
 
 body[data-theme="colour1"] {
     background-color: #708090;
-    color: #fffafa;
+    color: #222222;
 }
 
 .theme-button-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    top: 7.5px;
 }
 
 .theme-button {
@@ -25,20 +38,43 @@ body[data-theme="colour1"] {
     border-radius: 5px;
 }
 
-.background-rectangle {
-    margin-top: 7.5px;
-    margin-left: 15px;
-    margin-right: 15px;
+input[type="file"]::file-selector-button {
+    background-color: #d3d3d3;
+    padding: 1px 2px;
+    border-radius: 5px;
+}
 
-    background-color: #A9A9A9;
+.upload-button {
+    background-color: #d3d3d3;
+    padding: 1px 2px;
+    border-radius: 5px;
+}
+
+.background-rectangle {
+    position: relative;
+
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    background-color: #B2BEB5;
     border-style: solid;
     border-width: 2px;
     border-color: black;
     border-radius: 15px;
     padding: 20px;
 
-    min-height: 850px;
+    min-height: calc(100vh - 75px);
+
     height: auto;
     width: auto;
     box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
 }
