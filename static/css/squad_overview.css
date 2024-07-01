@@ -19,8 +19,8 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="colour1"] {
-    background-color: #708090;
-    color: #222222;
+    background-color: #111827;
+    color: #ffffff;
 }
 
 .theme-button-container {
@@ -45,9 +45,9 @@ body[data-theme="colour1"] {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-color: #B2BEB5;
+    background-color: #1e0956;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: black;
     border-radius: 15px;
     padding: 20px;
@@ -67,28 +67,28 @@ ul {
 
 .goalkeeper-column {
     position: absolute;
-    left: 7.5%;
+    left: 4.75%;
     top: 2.5%;
     text-align: center;
 }
 
 .defender-column {
     position: absolute;
-    left: 31.9%;
+    left: 29.75%;
     top: 2.5%;
     text-align: center;
 }
 
 .midfielder-column {
     position: absolute;
-    left: 56.3%;
+    left: 54.75%;
     top: 2.5%;
     text-align: center;
 }
 
 .attacker-column {
     position: absolute;
-    left: 80.625%;
+    left: 79.75%;
     top: 2.5%;
     text-align: center;
 }
@@ -99,6 +99,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #222222;
 }
 
 .player-display {
@@ -106,17 +107,20 @@ ul {
     padding: 10px 20px;
     border-radius: 15px;
     border: 2px solid #222222;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
+    background-color: #30342f;
+    margin-bottom: 20px;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 200px; /* Adjust the maximum width as per your design */
+    height: 20px;
+    width: 250px;
+    color: #f0f0f0;
 }
 
 .player-display img.flag {
     max-width: 50px;
     vertical-align: middle;
+    text-align: left;
     margin-right: 5px;
 }
 
