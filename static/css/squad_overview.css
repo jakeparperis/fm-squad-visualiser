@@ -6,6 +6,7 @@ html, body {
 
 body {
     font-family: "Roboto Light", sans-serif;
+    scrollbar-width: none;
 }
 
 body[data-theme="light"] {
@@ -19,7 +20,7 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="colour1"] {
-    background-color: #111827;
+    background-color: #dadada;
     color: #ffffff;
 }
 
@@ -58,6 +59,7 @@ body[data-theme="colour1"] {
     width: auto;
     box-sizing: border-box;
     overflow: auto;
+    scrollbar-width: none;
 }
 
 ul {
@@ -128,4 +130,8 @@ ul {
     background-color: #e0e0e0;
     border-color: #888888;
     cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

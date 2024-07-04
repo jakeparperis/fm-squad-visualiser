@@ -6,6 +6,7 @@ html, body {
 
 body {
     font-family: "Roboto Light", sans-serif;
+    scrollbar-width: none;
 }
 
 body[data-theme="light"] {
@@ -19,8 +20,8 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="colour1"] {
-    background-color: #708090;
-    color: #222222;
+    background-color: #dadada;
+    color: #ffffff;
 }
 
 .theme-button-container {
@@ -45,9 +46,9 @@ body[data-theme="colour1"] {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-color: #B2BEB5;
+    background-color: #1e0956;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: black;
     border-radius: 15px;
     padding: 20px;
@@ -57,4 +58,10 @@ body[data-theme="colour1"] {
     height: auto;
     width: auto;
     box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
