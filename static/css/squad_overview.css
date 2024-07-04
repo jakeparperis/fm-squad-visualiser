@@ -42,7 +42,7 @@ body[data-theme="colour1"] {
 .background-rectangle {
     position: relative;
 
-    margin-top: 15px;
+    top: 25px;
     margin-left: 25px;
     margin-right: 25px;
 
@@ -53,7 +53,7 @@ body[data-theme="colour1"] {
     border-radius: 15px;
     padding: 20px;
 
-    min-height: calc(100vh - 75px);
+    min-height: calc(100vh - 50px);
 
     height: auto;
     width: auto;
