@@ -127,8 +127,9 @@ ul {
 }
 
 .player-display:hover {
-    background-color: #e0e0e0;
+    background-color: #dadada;
     border-color: #888888;
+    color: #222222;
     cursor: pointer;
 }
 
