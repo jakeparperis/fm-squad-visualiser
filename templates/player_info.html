@@ -14,8 +14,57 @@
 <body data-theme="colour1">
     <div class="background-rectangle">
         <div class="card-rectangle">
-            <div class="squad-number-div">
-                {{ player['Squad Number'] }}
+            <div class="shirt-container">
+                <img src="static/img/misc/plain-white-football-shirt.svg" width="250px" height="250px" alt="">
+                <div class="shirt-number">
+                    {{ player['Squad Number'] }}
+                </div>
+            </div>
+
+            <div class="ovr-pos-nat-container">
+                <div class="ovr">
+                    {{ player['Best Overall'] }}
+                </div>
+                <div class="pos">
+                    {{ player['Position'] }}
+                </div>
+                <div class="nat">
+                    <img class="flag" src="{{ url_for('static', filename='img/flags/' + player['Nation'] + '.png') }}">
+                </div>
+            </div>
+
+            <div class="name-container">
+                <div class="name">
+                    {{ player['Name'] }}
+
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+
+            <div class="horizontal-line-top"></div>
+            <div class="horizontal-line-bottom"></div>
+a
+            <div class="pac-sho-pas-container">
+                <div class="pac">
+                    {{ player['Pace'] }}  PAC
+                </div>
+                <div class="sho">
+                    {{ player['Shooting'] }}  SHO
+                </div>
+                <div class="pas">
+                    {{ player['Passing'] }}  PAS
+                </div>
+            </div>
+            <div class="dri-def-phy-container">
+                <div class="dri">
+                    {{ player['Dribbling'] }}  DRI
+                </div>
+                <div class="def">
+                    {{ player['Defending'] }}  DEF
+                </div>
+                <div class="phy">
+                    {{ player['Physical'] }}  PHY
+                </div>
             </div>
         </div>
     </div>

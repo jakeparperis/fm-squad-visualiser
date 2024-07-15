@@ -11,7 +11,7 @@
     background-blend-mode: screen;
 
     border-style: solid;
-    border-width: 1px;
+    border-width: 10px;
     border-color: black;
     border-radius: 175px;
     padding: 20px;
@@ -22,7 +22,14 @@
     scrollbar-width: none;
 }
 
-.squad-number-div {
+.shirt-container {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+
+}
+.shirt-number {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -31,5 +38,118 @@
     color: #222222;
     font-weight: bold;
     font-family: Lato, sans-serif;
-    font-size: 96px;
+    font-size: 44px;
+}
+
+.ovr-pos-nat-container {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    text-align: center;
+
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 48px;
+}
+.ovr {
+    display: block;
+}
+.pos {
+    display: block;
+}
+.nat {
+    display: block;
+}
+
+.name-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 38px;
+}
+.name {
+    display: block;
+    white-space: nowrap;
+}
+.horizontal-line-top {
+    position: absolute;
+    bottom: 43.25%;
+    left: 12.5%;
+    width: 75%;
+    border-bottom: 2px solid #222222;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+.vertical-line {
+    position: absolute;
+    top: 200%;
+    bottom: -382.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #222222;
+    opacity: 50%;
+}
+
+.horizontal-line-bottom {
+    position: absolute;
+    bottom: 21.25%;
+    left: 12.5%;
+    width: 75%;
+    border-bottom: 2px solid #222222;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+
+.pac-sho-pas-container {
+    position: absolute;
+    top: 67.5%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 32px;
+}
+.pac {
+    display: block;
+}
+.sho {
+    display: block;
+}
+.pas {
+    display: block;
+}
+
+.dri-def-phy-container {
+    position: absolute;
+    top: 67.5%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 32px;
+}
+.dri {
+    display: block;
+}
+.def {
+    display: block;
+}
+.phy {
+    display: block;
 }
