@@ -37,7 +37,8 @@
                 <div class="name">
                     {{ player['Name'] }}
 
-                    <div class="vertical-line"></div>
+                    <div class="vertical-line-1"></div>
+                    <div class="vertical-line-2"></div>
                 </div>
             </div>
 
@@ -65,6 +66,28 @@ a
                 <div class="phy">
                     {{ player['Physical'] }}  PHY
                 </div>
+            </div>
+            <div class="sm">
+                SM:
+                {% for i in range(player['Skill Moves']) %}
+                    ⭐
+                {% endfor %}
+            </div>
+            <div class="wf">
+                WF:
+                {% for i in range(player['Weak Foot']) %}
+                    ⭐
+                {% endfor %}
+            </div>
+            <div class="age">
+                {{ player['Age'] }} y/o
+            </div>
+            <div class="height-weight">
+                {{ player['Height'] }}
+                {{ player['Weight'] }}
+            </div>
+            <div class="personality">
+                {{ player['Personality'] }}
             </div>
         </div>
     </div>
