@@ -150,6 +150,11 @@ def player_info_page():
     elif player['Position'] == "Attacker":
         player['Position'] = "ATT"
 
+    if player['Preferred Foot'] == "Right Only":
+        player['Preferred Foot'] = "Right"
+    elif player['Preferred Foot'] == "Left Only":
+        player['Preferred Foot'] = "Left"
+
     return render_template('player_info.html', player=player)
 
 
