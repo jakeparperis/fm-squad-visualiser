@@ -166,7 +166,7 @@
 
 .sm {
     position: absolute;
-    top: 82.5%;
+    top: 80%;
     left: 27.5%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -186,7 +186,7 @@
 }
 .wf {
     position: absolute;
-    top: 87.5%;
+    top: 85%;
     left: 27.5%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -204,6 +204,26 @@
     font-size: 20px;
     line-height: 1;
 }
+.pref-foot {
+    position: absolute;
+    top: 90%;
+    left: 27.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+
+    display: block;
+    text-shadow:
+        -0.5px -0.5px 0 black,
+        0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black,
+        0.5px 0.5px 0 black;
+    line-height: 1;
+}
 
 .age {
     position: absolute;
@@ -216,6 +236,14 @@
     font-weight: bold;
     font-family: Lato, sans-serif;
     font-size: 24px;
+
+    display: block;
+    text-shadow:
+        -0.25px -0.25px 0 black,
+        0.25px -0.25px 0 black,
+        -0.25px 0.25px 0 black,
+        0.25px 0.25px 0 black;
+    line-height: 1;
 }
 
 .height-weight {
@@ -229,6 +257,14 @@
     font-weight: bold;
     font-family: Lato, sans-serif;
     font-size: 24px;
+
+    display: block;
+    text-shadow:
+        -0.25px -0.25px 0 black,
+        0.25px -0.25px 0 black,
+        -0.25px 0.25px 0 black,
+        0.25px 0.25px 0 black;
+    line-height: 1;
 }
 
 .personality {
@@ -242,4 +278,12 @@
     font-weight: bold;
     font-family: Lato, sans-serif;
     font-size: 24px;
+
+    display: block;
+    text-shadow:
+        -0.25px -0.25px 0 black,
+        0.25px -0.25px 0 black,
+        -0.25px 0.25px 0 black,
+        0.25px 0.25px 0 black;
+    line-height: 1;
 }
