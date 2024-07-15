@@ -92,12 +92,6 @@ def calculate_player_info(squad):
 
         positions = ["FB", "WB", "CB", "DM", "CM", "AM", "W", "IF", "ST"]
 
-        if len(position_overalls) > 1:
-            print(name, "best overall:", best_overall)
-            for i in range(len(position_overalls)):
-                if position_overalls[i] > 0:
-                    print(name, "-", positions[i], ":", position_overalls[i])
-
         player_info.append({'Player ID': player_id,
                             'Nation': nation,
                             'Name': name,
@@ -128,5 +122,4 @@ def calculate_player_info(squad):
                             'Transfer Value': transfer_value,
                             'Wage': wage,
                             'Injury': injury})
-        print(player_info)
     return player_info
