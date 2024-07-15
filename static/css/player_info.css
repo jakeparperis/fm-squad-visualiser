@@ -62,30 +62,6 @@ body[data-theme="colour1"] {
     scrollbar-width: none;
 }
 
-.card-rectangle {
-    position: relative;
-    margin-left: 200px;
-    margin-top: 75px;
-
-    background:
-            repeating-linear-gradient(60deg, gold, #ff8000 50px, gold 50px),
-            repeating-linear-gradient(300deg, gold, #ff8000 50px, gold 50px);
-
-    background-size: 100% 100%, 100% 100%;
-    background-blend-mode: screen;
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 175px;
-    padding: 20px;
-    height: 775px;
-    width: 500px;
-    box-sizing: border-box;
-    overflow: auto;
-    scrollbar-width: none;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
