@@ -125,7 +125,7 @@ def player_info_page():
 
     # Deal with "-" in player attributes
     if player['Squad Number'] == "-":
-        player['Squad Number'] = ""
+        player['Squad Number'] = "##"
     if player['Injury'] == "-":
         player['Injury'] = "Not Injured"
     if player['International Appearances'] == "-":
