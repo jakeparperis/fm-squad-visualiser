@@ -154,6 +154,9 @@ class Player:
     def get_szn_assists(self):
         return self.szn_assists
 
+    def set_name(self, new_name):
+        self.name = new_name
+
     # Conversion calculation
 
     def calculate_pace(self):
