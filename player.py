@@ -161,28 +161,28 @@ class Player:
 
     def calculate_pace(self):
         fm_pace = (self.pace * 0.35 + self.acceleration * 0.65)
-        pace = math.ceil(fm_pace * 5.25)
+        pace = math.ceil(fm_pace * 5.5)
         pace = min(pace, 99)
         return pace
 
     def calculate_shooting(self):
         fm_shooting = (self.finishing * 0.85 + self.free_kicks * 0.02 + self.long_shots * 0.02 + self.penalties * 0.02 +
                        self.technique * 0.045 + self.composure * 0.045)
-        shooting = math.ceil(fm_shooting * 5.25)
+        shooting = math.ceil(fm_shooting * 5.5)
         shooting = min(shooting, 99)
         return shooting
 
     def calculate_passing(self):
         fm_passing = (self.crossing * 0.08 + self.passing * 0.68 + self.technique * 0.08 + self.decisions * 0.08 +
                       self.vision * 0.08)
-        passing = math.ceil(fm_passing * 5.25)
+        passing = math.ceil(fm_passing * 5.5)
         passing = min(passing, 99)
         return passing
 
     def calculate_dribbling(self):
         fm_dribbling = (self.dribbling * 0.76 + self.first_touch * 0.04 + self.technique * 0.04 +
                         self.composure * 0.04 + self.flair * 0.04 + self.agility * 0.04 + self.balance * 0.04)
-        dribbling = math.ceil(fm_dribbling * 5.25)
+        dribbling = math.ceil(fm_dribbling * 5.5)
         dribbling = min(dribbling, 99)
         return dribbling
 
@@ -190,14 +190,14 @@ class Player:
         fm_defending = (self.marking * 0.3 + self.tackling * 0.3 + self.aggression * 0.017 + self.anticipation * 0.017 +
                         self.bravery * 0.017 + self.composure * 0.017 + self.concentration * 0.017 +
                         self.decisions * 0.017 + self.positioning * 0.3)
-        defending = math.ceil(fm_defending * 5.5)
+        defending = math.ceil(fm_defending * 5.75)
         defending = min(defending, 99)
         return defending
 
     def calculate_physical(self):
         fm_physical = (self.jumping_reach * 0.20 + self.natural_fitness * 0.05 + self.stamina * 0.30 +
                        self.strength * 0.45)
-        physical = math.ceil(fm_physical * 5.25)
+        physical = math.ceil(fm_physical * 5.5)
         physical = min(physical, 99)
         return physical
 
