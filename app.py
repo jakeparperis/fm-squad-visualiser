@@ -72,10 +72,6 @@ def index():
                 squad_data.append(player_data)
 
             session['squad_data'] = squad_data
-            sort_by = request.args.get('sort_by', 'Name')
-            reverse = request.args.get('reverse', 'false').lower() == 'true'
-
-            squad_data.sort(key=lambda x: x[sort_by], reverse=reverse)
 
             return redirect(url_for('squad_overview'))
 
@@ -102,12 +98,12 @@ def squad_overview():
         elif pos == "ATT":
             attackers.append(player_data)
 
-    sort_by = request.args.get('sort_by', 'Name')
+    sort_by = request.args.get('sort_by', 'Best Overall')
     reverse = request.args.get('reverse', 'false').lower() == 'true'
-    goalkeepers.sort(key=lambda x: x[sort_by], reverse=reverse)
-    defenders.sort(key=lambda x: x[sort_by], reverse=reverse)
-    midfielders.sort(key=lambda x: x[sort_by], reverse=reverse)
-    attackers.sort(key=lambda x: x[sort_by], reverse=reverse)
+    goalkeepers.sort(key=lambda x: x[sort_by], reverse=True)
+    defenders.sort(key=lambda x: x[sort_by], reverse=True)
+    midfielders.sort(key=lambda x: x[sort_by], reverse=True)
+    attackers.sort(key=lambda x: x[sort_by], reverse=True)
 
     return render_template('squad_overview.html', goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
