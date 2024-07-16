@@ -1,7 +1,7 @@
 .card-rectangle {
     position: relative;
-    margin-left: 150px;
-    margin-top: 75px;
+    margin-left: 7.5%;
+    margin-top: 3.75%;
 
     background:
             repeating-linear-gradient(60deg, gold, #ff8000 50px, gold 50px),

@@ -8,91 +8,100 @@
     <title>Squad Overview</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info_card.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_positions.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
     <div class="background-rectangle">
-        <div class="card-rectangle">
-            <div class="shirt-container">
-                <img src="static/img/misc/plain-white-football-shirt.svg" width="250px" height="250px" alt="">
-                <div class="shirt-number">
-                    {{ player['Squad Number'] }}
+        <div class="container">
+            <div class="card-rectangle">
+                <div class="shirt-container">
+                    <img src="static/img/misc/plain-white-football-shirt.svg" width="250px" height="250px" alt="">
+                    <div class="shirt-number">
+                        {{ player['Squad Number'] }}
+                    </div>
+                </div>
+
+                <div class="ovr-pos-nat-container">
+                    <div class="ovr">
+                        {{ player['Best Overall'] }}
+                    </div>
+                    <div class="pos">
+                        {{ player['Position'] }}
+                    </div>
+                    <div class="nat">
+                        <img class="flag" style="outline: 5px solid gold" width="70" height="42" src="{{ url_for('static', filename='img/flags/400_240_flags/' + player['Nation'] + '.png') }}">
+                    </div>
+                </div>
+
+                <div class="name-container">
+                    <div class="name">
+                        {{ player['Name'] }}
+
+                        <div class="vertical-line-1"></div>
+                        <div class="vertical-line-2"></div>
+                    </div>
+                </div>
+
+                <div class="horizontal-line-top"></div>
+                <div class="horizontal-line-bottom"></div>
+    a
+                <div class="pac-sho-pas-container">
+                    <div class="pac">
+                        {{ player['Pace'] }}  PAC
+                    </div>
+                    <div class="sho">
+                        {{ player['Shooting'] }}  SHO
+                    </div>
+                    <div class="pas">
+                        {{ player['Passing'] }}  PAS
+                    </div>
+                </div>
+                <div class="dri-def-phy-container">
+                    <div class="dri">
+                        {{ player['Dribbling'] }}  DRI
+                    </div>
+                    <div class="def">
+                        {{ player['Defending'] }}  DEF
+                    </div>
+                    <div class="phy">
+                        {{ player['Physical'] }}  PHY
+                    </div>
+                </div>
+                <div class="sm">
+                    SM:
+                    {% for i in range(player['Skill Moves']) %}
+                        ⭐
+                    {% endfor %}
+                </div>
+                <div class="wf">
+                    WF:
+                    {% for i in range(player['Weak Foot']) %}
+                        ⭐
+                    {% endfor %}
+                </div>
+                <div class="pref-foot">
+                    {{ player['Preferred Foot'] }} footed
+                </div>
+                <div class="age">
+                    {{ player['Age'] }} y/o
+                </div>
+                <div class="height-weight">
+                    {{ player['Height'] }}
+                    {{ player['Weight'] }}
+                </div>
+                <div class="personality">
+                    {{ player['Personality'] }}
                 </div>
             </div>
 
-            <div class="ovr-pos-nat-container">
-                <div class="ovr">
-                    {{ player['Best Overall'] }}
-                </div>
-                <div class="pos">
-                    {{ player['Position'] }}
-                </div>
-                <div class="nat">
-                    <img class="flag" style="outline: 5px solid gold" width="70" height="42" src="{{ url_for('static', filename='img/flags/400_240_flags/' + player['Nation'] + '.png') }}">
-                </div>
-            </div>
-
-            <div class="name-container">
-                <div class="name">
-                    {{ player['Name'] }}
-
-                    <div class="vertical-line-1"></div>
-                    <div class="vertical-line-2"></div>
-                </div>
-            </div>
-
-            <div class="horizontal-line-top"></div>
-            <div class="horizontal-line-bottom"></div>
-a
-            <div class="pac-sho-pas-container">
-                <div class="pac">
-                    {{ player['Pace'] }}  PAC
-                </div>
-                <div class="sho">
-                    {{ player['Shooting'] }}  SHO
-                </div>
-                <div class="pas">
-                    {{ player['Passing'] }}  PAS
-                </div>
-            </div>
-            <div class="dri-def-phy-container">
-                <div class="dri">
-                    {{ player['Dribbling'] }}  DRI
-                </div>
-                <div class="def">
-                    {{ player['Defending'] }}  DEF
-                </div>
-                <div class="phy">
-                    {{ player['Physical'] }}  PHY
-                </div>
-            </div>
-            <div class="sm">
-                SM:
-                {% for i in range(player['Skill Moves']) %}
-                    ⭐
-                {% endfor %}
-            </div>
-            <div class="wf">
-                WF:
-                {% for i in range(player['Weak Foot']) %}
-                    ⭐
-                {% endfor %}
-            </div>
-            <div class="pref-foot">
-                {{ player['Preferred Foot'] }} footed
-            </div>
-            <div class="age">
-                {{ player['Age'] }} y/o
-            </div>
-            <div class="height-weight">
-                {{ player['Height'] }}
-                {{ player['Weight'] }}
-            </div>
-            <div class="personality">
-                {{ player['Personality'] }}
+            <div class="positions-pitch-container">
+                <img src="static/img/misc/footballpitch.png" style="outline: 5px solid black" width="520px" height="800px" alt="">
             </div>
         </div>
     </div>
+
+
 
 </body>
