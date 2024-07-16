@@ -230,25 +230,25 @@ class Player:
         # Defender cases
         if def_count > 0:
             if def_count > mid_count and def_count > att_mid_count:
-                pos = "Defender"
+                pos = "DEF"
             if def_count == mid_count:
-                pos = "Defender"
+                pos = "DEF"
 
         # Midfielder cases
         if mid_count > 0 or att_mid_count > 0:
             if (mid_count > def_count or att_mid_count > def_count) and "ST" not in player_positions:
-                pos = "Midfielder"
+                pos = "MID"
             if ((mid_count + att_mid_count) > 1) and def_count < 2:
-                pos = "Midfielder"
+                pos = "MID"
 
         # Attacker cases
         if "ST (C)" in player_positions:
             if def_count < 1 and (mid_count + att_mid_count) < 5:
-                pos = "Attacker"
+                pos = "ATT"
 
         # Goalkeeper cases
         if "GK" in player_positions:
-            pos = "Goalkeeper"
+            pos = "GK"
 
         return pos
 

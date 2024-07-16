@@ -62,13 +62,27 @@ def calculate_player_info(squad):
         club = player.get_club()
         division = player.get_division()
         squad_number = player.get_squad_num()
+        if squad_number == "-":
+            squad_number = "#"
         personality = player.get_personality()
         int_caps = player.get_int_caps()
+        if int_caps == "-":
+            int_caps = 0
         int_goals = player.get_int_goals()
+        if int_goals == "-":
+            int_goals = 0
         szn_apps = player.get_szn_apps()
+        if szn_apps == "-":
+            szn_apps = 0
         avg_rating = player.get_avg_rating()
+        if avg_rating == "-":
+            avg_rating = 0
         szn_goals = player.get_szn_goals()
+        if szn_goals == "-":
+            szn_goals = 0
         szn_assists = player.get_szn_assists()
+        if szn_assists == "-":
+            szn_assists = 0
         pac = player.calculate_pace()
         sho = player.calculate_shooting()
         pas = player.calculate_passing()
@@ -77,11 +91,17 @@ def calculate_player_info(squad):
         phy = player.calculate_physical()
         skill_moves, weak_foot = player.calc_sm_wf()
         pref_foot = player.get_pref_foot()
+        if pref_foot == "Right Only":
+            pref_foot = "Right"
+        elif pref_foot == "Left Only":
+            pref_foot = "Left"
         height = player.get_height()
         weight = player.get_weight()
         transfer_value = player.calc_transfer_val()
         wage = player.get_wage()
         injury = player.get_injury()
+        if injury == "-":
+            injury = "Not injured"
 
         position_overalls = player.calculate_overall()
 

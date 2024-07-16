@@ -93,13 +93,13 @@ def squad_overview():
 
     for player_data in squad_data:
         pos = player_data['Position']
-        if pos == "Goalkeeper":
+        if pos == "GK":
             goalkeepers.append(player_data)
-        elif pos == "Defender":
+        elif pos == "DEF":
             defenders.append(player_data)
-        elif pos == "Midfielder":
+        elif pos == "MID":
             midfielders.append(player_data)
-        elif pos == "Attacker":
+        elif pos == "ATT":
             attackers.append(player_data)
 
     sort_by = request.args.get('sort_by', 'Name')
@@ -122,38 +122,6 @@ def player_info_page():
         if player_data['Player ID'] == player_id:
             player = player_data
             break
-
-    # Deal with "-" in player attributes
-    if player['Squad Number'] == "-":
-        player['Squad Number'] = "#"
-    if player['Injury'] == "-":
-        player['Injury'] = "Not Injured"
-    if player['International Appearances'] == "-":
-        player['International Appearances'] = "0"
-    if player['International Goals'] == "-":
-        player['International Goals'] = "0"
-    if player['Season Appearances'] == "-":
-        player['Season Appearances'] = "0"
-    if player['Average Rating'] == "-":
-        player['Average Rating'] = "0"
-    if player['Season Goals'] == "-":
-        player['Season Goals'] = "0"
-    if player['Season Assists'] == "-":
-        player['Season Assists'] = "0"
-
-    if player['Position'] == "Goalkeeper":
-        player['Position'] = "GK"
-    elif player['Position'] == "Midfielder":
-        player['Position'] = "MID"
-    elif player['Position'] == "Defender":
-        player['Position'] = "DEF"
-    elif player['Position'] == "Attacker":
-        player['Position'] = "ATT"
-
-    if player['Preferred Foot'] == "Right Only":
-        player['Preferred Foot'] = "Right"
-    elif player['Preferred Foot'] == "Left Only":
-        player['Preferred Foot'] = "Left"
 
     return render_template('player_info.html', player=player)
 
