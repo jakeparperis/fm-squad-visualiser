@@ -102,6 +102,7 @@ ul {
     flex-direction: column;
     align-items: center;
     color: #222222;
+    gap: 20px;
 }
 
 .player-display {
@@ -110,7 +111,6 @@ ul {
     border-radius: 15px;
     border: 2px solid #222222;
     background-color: #30342f;
-    margin-bottom: 20px;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
