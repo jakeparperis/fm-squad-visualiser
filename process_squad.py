@@ -110,6 +110,17 @@ def calculate_player_info(squad):
             if ovr > best_overall:
                 best_overall = ovr
 
+        final_position_overalls = []
+        for ovr in position_overalls:
+            if ovr == 0:
+                final_position_overalls.append("N/A")
+            else:
+                final_position_overalls.append(ovr)
+
+        if player.find_position() == "GK":
+            for i in range(9):
+                final_position_overalls.append("N/A")
+
         positions = ["FB", "WB", "CB", "DM", "CM", "AM", "W", "IF", "ST"]
 
         player_info.append({'Player ID': player_id,
@@ -127,7 +138,7 @@ def calculate_player_info(squad):
                             'Season Goals': szn_goals,
                             'Season Assists': szn_assists,
                             'Best Overall': best_overall,
-                            'Position Overalls': position_overalls,
+                            'Position Overalls': final_position_overalls,
                             'Pace': pac,
                             'Shooting': sho,
                             'Passing': pas,

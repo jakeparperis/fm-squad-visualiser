@@ -288,8 +288,10 @@ class Player:
                 ovr.append(gk_ovr)
             else:
                 ovr.append(sk_ovr)
+
         else:
-            # Full Back - 0
+            ovr.append(0)
+            # Full Back - 1
             fullback = (self.marking * 0.125 + self.tackling * 0.125 + self.anticipation * 0.125 +
                         self.concentration * 0.125 + self.positioning * 0.125 + self.teamwork * 0.125 +
                         self.crossing * 0.03125 + self.dribbling * 0.03125 + self.passing * 0.03125 +
@@ -299,7 +301,7 @@ class Player:
             fullback = min(fullback, 99)
             ovr.append(fullback)
 
-            # Wing Back - 1
+            # Wing Back - 2
             wingback = (self.crossing * 0.075 + self.dribbling * 0.075 + self.tackling * 0.075 +
                         self.technique * 0.075 + self.off_the_ball * 0.075 + self.teamwork * 0.075 +
                         self.work_rate * 0.075 + self.acceleration * 0.075 + self.pace * 0.075 + self.stamina * 0.075 +
@@ -310,7 +312,7 @@ class Player:
             wingback = min(wingback, 99)
             ovr.append(wingback)
 
-            # Centre Back - 2
+            # Centre Back - 3
             centreback = (self.heading * 0.125 + self.marking * 0.125 + self.tackling * 0.125 +
                           self.positioning * 0.125 + self.jumping_reach * 0.125 + self.strength * 0.125 +
                           self.aggression * 0.0358 + self.anticipation * 0.0358 + self.bravery * 0.0358 +
@@ -320,7 +322,7 @@ class Player:
             centreback = min(centreback, 99)
             ovr.append(centreback)
 
-            # Defensive Midfielder - 3
+            # Defensive Midfielder - 4
             dmid = (self.tackling * 0.15 + self.anticipation * 0.15 + self.concentration * 0.15 +
                     self.positioning * 0.15 + self.teamwork * 0.15 + self.first_touch * 0.03 + self.marking * 0.03 +
                     self.passing * 0.03 + self.aggression * 0.03 + self.composure * 0.03 + self.decisions * 0.03 +
@@ -329,7 +331,7 @@ class Player:
             dmid = min(dmid, 99)
             ovr.append(dmid)
 
-            # Central Midfielder - 4
+            # Central Midfielder - 5
             cmid = (self.first_touch * 0.15 + self.passing * 0.15 + self.tackling * 0.15 + self.decisions * 0.15 +
                     self.teamwork * 0.15 + self.technique * 0.025 + self.anticipation * 0.025 +
                     self.composure * 0.025 + self.concentration * 0.025 + self.off_the_ball * 0.025 +
@@ -339,7 +341,7 @@ class Player:
             cmid = min(cmid, 99)
             ovr.append(cmid)
 
-            # Attacking Midfielder - 5
+            # Attacking Midfielder - 6
             amid = (self.first_touch * 0.09375 + self.long_shots * 0.09375 + self.passing * 0.09375 +
                     self.technique * 0.09375 + self.anticipation * 0.09375 + self.decisions * 0.09375 +
                     self.flair * 0.09375 + self.off_the_ball * 0.09375 + self.dribbling * 0.0416666666666667
@@ -350,7 +352,7 @@ class Player:
             amid = min(amid, 99)
             ovr.append(amid)
 
-            # Winger - 6
+            # Winger - 7
             winger = (self.crossing * 0.15 + self.dribbling * 0.15 + self.technique * 0.15 + self.acceleration * 0.15 +
                       self.agility * 0.15 + self.first_touch * 0.0357142857142857 + self.passing * 0.0357142857142857 +
                       self.off_the_ball * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
@@ -360,7 +362,7 @@ class Player:
             winger = min(winger, 99)
             ovr.append(winger)
 
-            # Inside Forward - 7
+            # Inside Forward - 8
             fwd = (self.dribbling * 0.09375 + self.finishing * 0.09375 + self.first_touch * 0.09375 +
                    self.technique * 0.09375 + self.anticipation * 0.09375 + self.off_the_ball * 0.09375 +
                    self.acceleration * 0.09375 + self.agility * 0.09375 + self.long_shots * 0.03125 +
@@ -371,7 +373,7 @@ class Player:
             fwd = min(fwd, 99)
             ovr.append(fwd)
 
-            # Striker - 8
+            # Striker - 9
             striker = (self.dribbling * 0.07 + self.finishing * 0.07 + self.first_touch * 0.07 +
                        self.heading * 0.07 + self.technique * 0.07 + self.anticipation * 0.07 +
                        self.composure * 0.07 + self.off_the_ball * 0.07 + self.acceleration * 0.07 +
