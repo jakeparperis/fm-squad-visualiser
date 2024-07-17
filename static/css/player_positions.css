@@ -1,5 +1,670 @@
 .positions-pitch-container {
     position: relative;
-    margin-right: 10%;
+    margin-right: 7.5%;
     margin-top: 3.25%;
+
+    font-family: cursive, sans-serif;
+}
+
+.LB-container {
+    position: absolute;
+    top: 77.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: orange;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LB-label {
+    position: absolute;
+    top: 72.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RB-container {
+    position: absolute;
+    top: 77.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: orange;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RB-label {
+    position: absolute;
+    top: 72.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LCB-container {
+    position: absolute;
+    top: 77.5%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: orange;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LCB-label {
+    position: absolute;
+    top: 72.5%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LCB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RCB-container {
+    position: absolute;
+    top: 77.5%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: orange;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RCB-label {
+    position: absolute;
+    top: 72.5%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RCB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LWB-container {
+    position: absolute;
+    top: 62.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LWB-label {
+    position: absolute;
+    top: 57.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LWB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RWB-container {
+    position: absolute;
+    top: 62.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RWB-label {
+    position: absolute;
+    top: 57.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RWB-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.CDM-container {
+    position: absolute;
+    top: 62.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.CDM-label {
+    position: absolute;
+    top: 57.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.CDM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LM-container {
+    position: absolute;
+    top: 47.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LM-label {
+    position: absolute;
+    top: 42.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RM-container {
+    position: absolute;
+    top: 47.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RM-label {
+    position: absolute;
+    top: 42.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LCM-container {
+    position: absolute;
+    top: 47.5%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LCM-label {
+    position: absolute;
+    top: 42.5%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LCM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RCM-container {
+    position: absolute;
+    top: 47.5%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RCM-label {
+    position: absolute;
+    top: 42.5%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RCM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LW-container {
+    position: absolute;
+    top: 27.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LW-label {
+    position: absolute;
+    top: 22.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LW-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RW-container {
+    position: absolute;
+    top: 27.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RW-label {
+    position: absolute;
+    top: 22.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RW-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.CAM-container {
+    position: absolute;
+    top: 32.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.CAM-label {
+    position: absolute;
+    top: 27.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.CAM-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.LST-container {
+    position: absolute;
+    top: 17.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.LST-label {
+    position: absolute;
+    top: 12.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.LST-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.RST-container {
+    position: absolute;
+    top: 17.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.RST-label {
+    position: absolute;
+    top: 12.5%;
+    left: 82.5%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.RST-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.ST-container {
+    position: absolute;
+    top: 17.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: yellow;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 15px;
+    padding: 20px;
+    height: 5%;
+    width: 15% ;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.ST-label {
+    position: absolute;
+    top: 12.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
+}
+.ST-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #222222;
+    font-weight: bold;
+    font-size: 24px;
 }
