@@ -66,6 +66,31 @@ body[data-theme="colour1"] {
     display: none;
 }
 
+.navigation-container {
+    background-color: #fffafa;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 15px;
+    padding: 5px;
+    height: 5%;
+    width: 3.5%;
+    margin-top: -0.1%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.home {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
+}
+.squad {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
+}
+
 .container {
     display: flex;
     justify-content: space-between;

@@ -95,9 +95,16 @@ ul {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 0%;
+}
+h1 {
+    margin-top: 25%;
+}
 .player-container {
-    margin: 0;
-    padding: 0;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,6 +138,103 @@ ul {
     border-color: #888888;
     color: #222222;
     cursor: pointer;
+}
+
+.squad-container {
+
+}
+
+.line-gk-def {
+    position: absolute;
+    top: 17.5%;
+    left: 24.5%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #fffafa;
+    opacity: 50%;
+}
+.line-def-mid {
+    position: absolute;
+    top: 17.5%;
+    left: 49.5%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #fffafa;
+    opacity: 50%;
+}
+.line-mid-att {
+    position: absolute;
+    top: 17.5%;
+    left: 74.5%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #fffafa;
+    opacity: 50%;
+}
+.line-gk-header {
+    position: absolute;
+    top: 14.75%;
+    left: 6%;
+    width: 12%;
+    border-bottom: 2px solid #fffafa;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+.line-def-header {
+    position: absolute;
+    top: 14.75%;
+    left: 31%;
+    width: 12%;
+    border-bottom: 2px solid #fffafa;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+.line-mid-header {
+    position: absolute;
+    top: 14.75%;
+    left: 56%;
+    width: 12%;
+    border-bottom: 2px solid #fffafa;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+.line-att-header {
+    position: absolute;
+    top: 14.5%;
+    left: 81%;
+    width: 12%;
+    border-bottom: 2px solid #fffafa;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 50%;
+}
+
+.navigation-container {
+    background-color: #fffafa;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 15px;
+    padding: 5px;
+    height: 5%;
+    width: 3.5%;
+    margin-top: -3.75%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.home {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
+}
+.squad {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
 }
 
 ::-webkit-scrollbar {

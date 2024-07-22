@@ -9,12 +9,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info_card.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_positions.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
     <div class="background-rectangle">
+
         <div class="container">
+            <div class="navigation-container">
+                <div class="home">
+                    <a href="{{ url_for('index') }}" style="text-decoration: none">🏠</a>
+                </div>
+                <div class="squad">
+                    <a href="{{ url_for('squad_overview') }}" style="text-decoration: none">👕</a>
+                </div>
+            </div>
+
             <div class="card-rectangle">
                 <div class="shirt-container">
                     <img src="static/img/misc/plain-white-football-shirt.svg" width="250px" height="250px" alt="">
@@ -46,7 +57,7 @@
 
                 <div class="horizontal-line-top"></div>
                 <div class="horizontal-line-bottom"></div>
-    a
+
                 <div class="pac-sho-pas-container">
                     <div class="pac">
                         {{ player['Pace'] }}  PAC

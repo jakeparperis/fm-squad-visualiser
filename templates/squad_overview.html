@@ -7,70 +7,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squad Overview</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/squad_overview.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/view-player.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
     <div class="background-rectangle">
+        <h2>Squad Overview</h2>
 
-        <div class="goalkeeper-column">
-            <h1>Goalkeepers</h1>
-            <ul class="player-container">
-                {% for player in goalkeepers %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
-                        <div class="player-display">
-                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
-                            {{ player['Name'] }} {{ player['Best Overall'] }}
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="navigation-container">
+            <div class="home">
+                <a href="{{ url_for('index') }}" style="text-decoration: none">🏠</a>
+            </div>
+            <div class="squad">
+                <a href="{{ url_for('squad_overview') }}" style="text-decoration: none">👕</a>
+            </div>
         </div>
 
-        <div class="defender-column">
-            <h1>Defenders</h1>
-            <ul class="player-container">
-                {% for player in defenders %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
-                        <div class="player-display">
-                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
-                            {{ player['Name'] }} {{ player['Best Overall'] }}
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="squad-container">
+            <div class="line-gk-def"></div>
+            <div class="line-def-mid"></div>
+            <div class="line-mid-att"></div>
+
+            <div class="line-gk-header"></div>
+            <div class="goalkeeper-column" id="goalkeeper-column">
+                <h1>Goalkeepers</h1>
+                <ul class="player-container">
+                    {% for player in goalkeepers %}
+                        <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                            <div class="player-display">
+                                <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="line-def-header"></div>
+            <div class="defender-column" id="defender-column">
+                <h1>Defenders</h1>
+                <ul class="player-container">
+                    {% for player in defenders %}
+                        <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                            <div class="player-display">
+                                <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="line-mid-header"></div>
+            <div class="midfielder-column" id="midfielder-column">
+                <h1>Midfielders</h1>
+                <ul class="player-container">
+                    {% for player in midfielders %}
+                        <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                            <div class="player-display">
+                                <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="line-att-header"></div>
+            <div class="attacker-column" id="attacker-column">
+                <h1>Attackers</h1>
+                <ul class="player-container">
+                    {% for player in attackers %}
+                        <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                            <div class="player-display">
+                                <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
 
-        <div class="midfielder-column">
-            <h1>Midfielders</h1>
-            <ul class="player-container">
-                {% for player in midfielders %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
-                        <div class="player-display">
-                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
-                            {{ player['Name'] }} {{ player['Best Overall'] }}
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="attacker-column">
-            <h1>Attackers</h1>
-            <ul class="player-container">
-                {% for player in attackers %}
-                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
-                        <div class="player-display">
-                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
-                            {{ player['Name'] }} {{ player['Best Overall'] }}
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
     </div>
-</body>
 
+        <script>
+            window.addEventListener('load', function() {
+                const gkColumn = document.getElementById('goalkeeper-column');
+                const defColumn = document.getElementById('defender-column');
+                const midColumn = document.getElementById('midfielder-column');
+                const attColumn = document.getElementById('attacker-column');
 
+                const columns = [gkColumn, defColumn, midColumn, attColumn];
+
+                let maxHeight = 0;
+                columns.forEach(column => {
+                    const columnHeight = column.scrollHeight;
+                    if (columnHeight > maxHeight) {
+                        maxHeight = columnHeight - 75;
+                    }
+                });
+
+                document.querySelectorAll('.line-gk-def, .line-def-mid, .line-mid-att').forEach(line => {
+                    line.style.height = `${maxHeight}px`;
+                });
+            });
+        </script>
+
+    </body>
 </html>

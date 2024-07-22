@@ -41,13 +41,11 @@ body[data-theme="colour1"] {
 
 input[type="file"]::file-selector-button {
     background-color: #d3d3d3;
-    padding: 1px 2px;
     border-radius: 5px;
 }
 
 .upload-button {
     background-color: #d3d3d3;
-    padding: 1px 2px;
     border-radius: 5px;
 }
 
@@ -76,10 +74,36 @@ input[type="file"]::file-selector-button {
 
 h1 {
     text-align: center;
+    margin-top: -3.75%;
 }
 
 form {
     text-align: center;
+}
+
+.navigation-container {
+    background-color: #fffafa;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 15px;
+    padding: 5px;
+    height: 5%;
+    width: 3.5%;
+    margin-top: -0.1%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.home {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
+}
+.squad {
+    margin-top: 0%;
+    margin-left: 0%;
+    font-size: 36px;
 }
 
 ::-webkit-scrollbar {

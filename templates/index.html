@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FM Squad Visualiser</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
     <div class="background-rectangle">
+        <div class="navigation-container">
+            <div class="home">
+                <a href="{{ url_for('index') }}" style="text-decoration: none">🏠</a>
+            </div>
+            <div class="squad">
+                <a href="{{ url_for('squad_overview') }}" style="text-decoration: none">👕</a>
+            </div>
+        </div>
+
         <h1>FM Squad Visualiser</h1>
 
         <!-- Flash handling -->
