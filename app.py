@@ -14,22 +14,19 @@ Session(app)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    upload_success = True
 
     if request.method == 'POST':
         if 'file' not in request.files:
-            upload_success = False
             flash('No file found')
             return redirect(request.url)
 
         file = request.files['file']
 
         if file.filename == '':
-            upload_success = False
             flash('No file selected')
             return redirect(request.url)
 
-        if upload_success:
+        if file.filename.endswith('.html'):
             squad = initialise_squad(file)  # List of Player objects
             player_info = calculate_player_info(squad)  # List of dicts
             positions = store_positions(squad)  # List of strings
@@ -74,6 +71,8 @@ def index():
             session['squad_data'] = squad_data
 
             return redirect(url_for('squad_overview'))
+        else:
+            flash('File must be html')
 
         return redirect(url_for('index'))
     return render_template('index.html', title='Home Page')
@@ -123,4 +122,4 @@ def player_info_page():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
