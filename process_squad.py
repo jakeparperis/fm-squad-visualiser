@@ -1,3 +1,5 @@
+import math
+
 from bs4 import BeautifulSoup
 from player import Player
 
@@ -109,6 +111,7 @@ def calculate_player_info(squad):
         for ovr in position_overalls:
             if ovr > best_overall:
                 best_overall = ovr
+        best_overall = math.ceil(best_overall * 0.975)
 
         final_position_overalls = []
         for ovr in position_overalls:

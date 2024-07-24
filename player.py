@@ -180,8 +180,8 @@ class Player:
         return passing
 
     def calculate_dribbling(self):
-        fm_dribbling = (self.dribbling * 0.76 + self.first_touch * 0.04 + self.technique * 0.04 +
-                        self.composure * 0.04 + self.flair * 0.04 + self.agility * 0.04 + self.balance * 0.04)
+        fm_dribbling = (self.dribbling * 0.70 + self.first_touch * 0.05 + self.technique * 0.05 +
+                        self.composure * 0.05 + self.flair * 0.05 + self.agility * 0.05 + self.balance * 0.05)
         dribbling = math.ceil(fm_dribbling * 5.5)
         dribbling = min(dribbling, 99)
         return dribbling
