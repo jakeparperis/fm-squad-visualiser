@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_session import Session
 import os
 from process_squad import initialise_squad, store_positions, calculate_player_info
-import player
 
 app = Flask(__name__, static_url_path='/static')
 secret_key = os.urandom(32)
@@ -12,7 +11,7 @@ app.config['SECRET_KEY'] = secret_key
 Session(app)
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
 
     if request.method == 'POST':
