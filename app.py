@@ -106,8 +106,8 @@ def squad_overview():
     midfielders.sort(key=lambda x: x[sort_by], reverse=True)
     attackers.sort(key=lambda x: x[sort_by], reverse=True)
 
-    return render_template('squad_overview.html', goalkeepers=goalkeepers,
-                           defenders=defenders, midfielders=midfielders, attackers=attackers)
+    return render_template('squad_overview.html', goalkeepers=goalkeepers, defenders=defenders,
+                           midfielders=midfielders, attackers=attackers)
 
 @app.route('/squad_builder', methods=['GET'])
 def squad_builder():
@@ -135,8 +135,24 @@ def squad_builder():
     midfielders.sort(key=lambda x: x[sort_by], reverse=True)
     attackers.sort(key=lambda x: x[sort_by], reverse=True)
 
-    return render_template('squad_builder.html', goalkeepers=goalkeepers,
-                           defenders=defenders, midfielders=midfielders, attackers=attackers)
+    default_player_id = squad_data[0]['Player ID'] if squad_data else None
+    default_player = squad_data[0] if squad_data else None
+
+    return render_template('squad_builder.html', goalkeepers=goalkeepers, defenders=defenders,
+                           midfielders=midfielders, attackers=attackers, default_player_id=default_player_id,
+                           default_player=default_player)
+
+@app.route('/show_card', methods=['GET'])
+def show_card():
+    player_id = request.args.get('player_id')
+    squad_data = session.get('squad_data', [])
+
+    for player_data in squad_data:
+        if player_data['Player ID'] == player_id:
+            player = player_data
+            return render_template('player_card_template.html', player=player)
+
+    return '', 404
 
 
 @app.route('/player_info_page', methods=['GET'])
