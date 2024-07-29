@@ -36,38 +36,50 @@ li {
     font-size: 28px;
 }
 
-.season-container {
+.all-container {
     position: absolute;
     margin-left: 2.5%;
     margin-top: 2.5%;
 }
-.season-content {
-    margin-top: 5%;
+.all-content {
+    margin-top: 1.25%;
     color: #222222;
     font-family: Lato, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
+}
+
+.season-container {
+    position: absolute;
+    margin-left: 2.5%;
+    margin-top: 43.25%;
+}
+.season-content {
+    margin-top: 1.25%;
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-size: 22px;
 }
 
 .transfer-container {
     position: absolute;
     margin-left: 2.5%;
-    margin-top: 50%;
+    margin-top: 92.5%;
 }
 .transfer-content {
-    margin-top: 5%;
+    margin-top: 1.25%;
     color: #222222;
     font-family: Lato, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .injury-container {
     position: absolute;
     margin-left: 2.5%;
-    margin-top: 82.5%;
+    margin-top: 120%;
 }
 .injury-content {
-    margin-top: 5%;
+    margin-top: 1.25%;
     color: #222222;
     font-family: Lato, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
 }

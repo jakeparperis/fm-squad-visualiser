@@ -19,12 +19,24 @@
         <div class="container">
 
             <div class="stats-rectangle">
+                <div class="all-container">
+                    <div class="title">Career:</div>
+                    <div class="all-content">
+                        <ul>
+                            <li>Apps - {{ player['All Time Appearances'] }}</li>
+                            <li>Goals - {{ player['All Time Goals'] }}</li>
+                            <li>International Caps - {{ player['International Appearances'] }}</li>
+                            <li>International Goals - {{ player['International Goals'] }}</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="season-container">
                     <div class="title">Season:</div>
                     <div class="season-content">
                         <ul>
                             <li>Apps - {{ player['Season Appearances'] }}</li>
                             <li>Avg Rating - {{ player['Average Rating'] }}</li>
+                            <li>Expected Goals (xG) - {{ player['Season xG'] }}</li>
                             <li>Goals - {{ player['Season Goals'] }}</li>
                             <li>Assists - {{ player['Season Assists'] }}</li>
                         </ul>
