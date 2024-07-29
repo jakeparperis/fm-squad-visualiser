@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info_card.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_positions.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_stats.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
 </head>
 
@@ -17,6 +17,7 @@
     <div class="background-rectangle">
 
         <div class="container">
+            <div class="stats-rectangle"></div>
             <div class="navigation-container">
                 <div class="home-container">
                     <a href="{{ url_for('index') }}">
