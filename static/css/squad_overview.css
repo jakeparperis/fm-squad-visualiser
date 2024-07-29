@@ -145,7 +145,7 @@ h1 {
     top: 17.5%;
     left: 32.5%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 1px;
     background-color: #fffafa;
     opacity: 50%;
 }
@@ -154,7 +154,7 @@ h1 {
     top: 17.5%;
     left: 52.5%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 1.5px;
     background-color: #fffafa;
     opacity: 50%;
 }
