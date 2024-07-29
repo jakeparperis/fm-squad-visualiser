@@ -143,36 +143,36 @@ h1 {
 .line-gk-def {
     position: absolute;
     top: 17.5%;
-    left: 32.5%;
+    left: 32.875%;
     transform: translateX(-50%);
-    width: 1px;
+    width: 2px;
     background-color: #fffafa;
     opacity: 50%;
 }
 .line-def-mid {
     position: absolute;
     top: 17.5%;
-    left: 52.5%;
+    left: 52.85%;
     transform: translateX(-50%);
-    width: 1.5px;
+    width: 2px;
     background-color: #fffafa;
     opacity: 50%;
 }
 .line-mid-att {
     position: absolute;
     top: 17.5%;
-    left: 72.5%;
+    left: 72.875%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 2.5px;
     background-color: #fffafa;
     opacity: 50%;
 }
 .line-gk-header {
     position: absolute;
     top: 14.75%;
-    left: 16.25%;
+    left: 16.75%;
     width: 12%;
-    border-bottom: 2px solid #fffafa;
+    border-bottom: 3px solid #fffafa;
     transform-origin: center;
     z-index: 0;
     opacity: 50%;
@@ -180,9 +180,9 @@ h1 {
 .line-def-header {
     position: absolute;
     top: 14.75%;
-    left: 36.25%;
+    left: 36.75%;
     width: 12%;
-    border-bottom: 2px solid #fffafa;
+    border-bottom: 3px solid #fffafa;
     transform-origin: center;
     z-index: 0;
     opacity: 50%;
@@ -190,9 +190,9 @@ h1 {
 .line-mid-header {
     position: absolute;
     top: 14.75%;
-    left: 56.25%;
+    left: 56.75%;
     width: 12%;
-    border-bottom: 2px solid #fffafa;
+    border-bottom: 3px solid #fffafa;
     transform-origin: center;
     z-index: 0;
     opacity: 50%;
