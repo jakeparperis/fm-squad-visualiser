@@ -279,9 +279,9 @@ class Player:
                       self.first_touch * 0.03 + self.handling * 0.1375 + self.passing * 0.03 + self.throwing * 0.03 +
                       self.decisions * 0.03 + self.vision * 0.03 + self.acceleration * 0.03)
 
-            gk_ovr = math.ceil(gk_ovr * 5.25)
+            gk_ovr = math.ceil(gk_ovr * 5.11875)
             gk_ovr = min(gk_ovr, 99)
-            sk_ovr = math.ceil(sk_ovr * 5.75)
+            sk_ovr = math.ceil(sk_ovr * 5.60625)
             sk_ovr = min(sk_ovr, 99)
 
             if gk_ovr > sk_ovr:
@@ -297,7 +297,7 @@ class Player:
                         self.crossing * 0.03125 + self.dribbling * 0.03125 + self.passing * 0.03125 +
                         self.technique * 0.03125 + self.work_rate * 0.03125 + self.decisions * 0.03125 +
                         self.pace * 0.03125 + self.stamina * 0.3125)
-            fullback = math.ceil(fullback * 4.25)
+            fullback = math.ceil(fullback * 4.14375)
             fullback = min(fullback, 99)
             ovr.append(fullback)
 
@@ -308,7 +308,7 @@ class Player:
                         self.first_touch * 0.025 + self.marking * 0.025 + self.passing * 0.025 +
                         self.anticipation * 0.025 + self.concentration * 0.025 + self.decisions * 0.025 +
                         self.flair * 0.025 + self.positioning * 0.025 + self.agility * 0.025 + self.balance * 0.025)
-            wingback = math.ceil(wingback * 5.75)
+            wingback = math.ceil(wingback * 5.60625)
             wingback = min(wingback, 99)
             ovr.append(wingback)
 
@@ -318,7 +318,7 @@ class Player:
                           self.aggression * 0.0358 + self.anticipation * 0.0358 + self.bravery * 0.0358 +
                           self.composure * 0.0358 + self.concentration * 0.0358 + self.decisions * 0.0358 +
                           self.pace * 0.0358)
-            centreback = math.ceil(centreback * 5.5)
+            centreback = math.ceil(centreback * 5.3625)
             centreback = min(centreback, 99)
             ovr.append(centreback)
 
@@ -327,7 +327,7 @@ class Player:
                     self.positioning * 0.15 + self.teamwork * 0.15 + self.first_touch * 0.03 + self.marking * 0.03 +
                     self.passing * 0.03 + self.aggression * 0.03 + self.composure * 0.03 + self.decisions * 0.03 +
                     self.work_rate * 0.03 + self.stamina * 0.03 + self.strength)
-            dmid = math.ceil(dmid * 2.75)
+            dmid = math.ceil(dmid * 2.68125)
             dmid = min(dmid, 99)
             ovr.append(dmid)
 
@@ -337,7 +337,7 @@ class Player:
                     self.composure * 0.025 + self.concentration * 0.025 + self.off_the_ball * 0.025 +
                     self.vision * 0.025 + self.work_rate * 0.025 + self.stamina * 0.025 + self.pace * 0.025 +
                     self.acceleration * 0.025)
-            cmid = math.ceil(cmid * 5.625)
+            cmid = math.ceil(cmid * 5.484375)
             cmid = min(cmid, 99)
             ovr.append(cmid)
 
@@ -348,7 +348,7 @@ class Player:
                     + self.composure * 0.0416666666666667 + self.vision * 0.0416666666666667 +
                     self.agility * 0.0416666666666667 + self.pace * 0.0416666666666667 +
                     self.acceleration * 0.0416666666666667)
-            amid = math.ceil(amid * 5.75)
+            amid = math.ceil(amid * 5.60625)
             amid = min(amid, 99)
             ovr.append(amid)
 
@@ -358,7 +358,7 @@ class Player:
                       self.off_the_ball * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
                       self.balance * 0.0357142857142857 + self.pace * 0.0357142857142857
                       + self.stamina * 0.0357142857142857)
-            winger = math.ceil(winger * 5.5)
+            winger = math.ceil(winger * 5.3625)
             winger = min(winger, 99)
             ovr.append(winger)
 
@@ -369,7 +369,7 @@ class Player:
                    self.passing * 0.03125 + self.composure * 0.03125 + self.flair * 0.03125 +
                    self.work_rate * 0.03125 + self.balance * 0.03125 + self.pace * 0.03125 +
                    self.stamina * 0.03125)
-            fwd = math.ceil(fwd * 5.5)
+            fwd = math.ceil(fwd * 5.3625)
             fwd = min(fwd, 99)
             ovr.append(fwd)
 
@@ -378,7 +378,7 @@ class Player:
                        self.heading * 0.07 + self.technique * 0.07 + self.anticipation * 0.07 +
                        self.composure * 0.07 + self.off_the_ball * 0.07 + self.acceleration * 0.07 +
                        self.agility * 0.07 + self.strength * 0.07)
-            striker = math.ceil(striker * 7.375)
+            striker = math.ceil(striker * 7.190625)
             striker = min(striker, 99)
             ovr.append(striker)
 
