@@ -19,3 +19,55 @@
     overflow: auto;
     scrollbar-width: none;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+
+.title {
+    color: #222222;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    font-size: 28px;
+}
+
+.season-container {
+    position: absolute;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+}
+.season-content {
+    margin-top: 5%;
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+}
+
+.transfer-container {
+    position: absolute;
+    margin-left: 2.5%;
+    margin-top: 50%;
+}
+.transfer-content {
+    margin-top: 5%;
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+}
+
+.injury-container {
+    position: absolute;
+    margin-left: 2.5%;
+    margin-top: 82.5%;
+}
+.injury-content {
+    margin-top: 5%;
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+}

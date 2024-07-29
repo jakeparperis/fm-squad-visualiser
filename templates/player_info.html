@@ -17,7 +17,36 @@
     <div class="background-rectangle">
 
         <div class="container">
-            <div class="stats-rectangle"></div>
+
+            <div class="stats-rectangle">
+                <div class="season-container">
+                    <div class="title">Season:</div>
+                    <div class="season-content">
+                        <ul>
+                            <li>Apps - {{ player['Season Appearances'] }}</li>
+                            <li>Avg Rating - {{ player['Average Rating'] }}</li>
+                            <li>Goals - {{ player['Season Goals'] }}</li>
+                            <li>Assists - {{ player['Season Assists'] }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="transfer-container">
+                    <div class="title">Transfer:</div>
+                    <div class="transfer-content">
+                        <ul>
+                            <li>Transfer Value - {{ player['Transfer Value'] }}</li>
+                            <li>Wage - {{ player['Wage'] }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="injury-container">
+                    <div class="title">Injury:</div>
+                    <div class="injury-content">
+                        {{ player['Injury'] }}
+                    </div>
+                </div>
+            </div>
+
             <div class="navigation-container">
                 <div class="home-container">
                     <a href="{{ url_for('index') }}">
