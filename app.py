@@ -109,6 +109,35 @@ def squad_overview():
     return render_template('squad_overview.html', goalkeepers=goalkeepers,
                            defenders=defenders, midfielders=midfielders, attackers=attackers)
 
+@app.route('/squad_builder', methods=['GET'])
+def squad_builder():
+    goalkeepers = []
+    defenders = []
+    midfielders = []
+    attackers = []
+    squad_data = session.get('squad_data', [])
+
+    for player_data in squad_data:
+        pos = player_data['Position']
+        if pos == "GK":
+            goalkeepers.append(player_data)
+        elif pos == "DEF":
+            defenders.append(player_data)
+        elif pos == "MID":
+            midfielders.append(player_data)
+        elif pos == "ATT":
+            attackers.append(player_data)
+
+    sort_by = request.args.get('sort_by', 'Best Overall')
+    reverse = request.args.get('reverse', 'false').lower() == 'true'
+    goalkeepers.sort(key=lambda x: x[sort_by], reverse=True)
+    defenders.sort(key=lambda x: x[sort_by], reverse=True)
+    midfielders.sort(key=lambda x: x[sort_by], reverse=True)
+    attackers.sort(key=lambda x: x[sort_by], reverse=True)
+
+    return render_template('squad_builder.html', goalkeepers=goalkeepers,
+                           defenders=defenders, midfielders=midfielders, attackers=attackers)
+
 
 @app.route('/player_info_page', methods=['GET'])
 def player_info_page():
