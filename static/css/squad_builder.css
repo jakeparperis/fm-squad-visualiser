@@ -64,7 +64,7 @@ body[data-theme="colour1"] {
 }
 
 .navigation-container {
-    position: absolute;
+    position: fixed;
     background-color: #dadada;
     border-style: solid;
     border-width: 1px;
@@ -73,7 +73,6 @@ body[data-theme="colour1"] {
     padding: 5px;
     height: 5%;
     width: 7.5%;
-    margin-top: -0.1%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -97,16 +96,17 @@ body[data-theme="colour1"] {
 }
 
 .pitch-container {
-    position: relative;
-    margin-left: 65%;
+    position: fixed;
+    margin-left: 62.5%;
     margin-top: 0.5%;
+    overflow: hidden;
 
     font-family: cursive, sans-serif;
 }
 
 .line-squad-header {
     position: absolute;
-    top: 6.75%;
+    top: 6.25%;
     left: 10%;
     width: 80%;
     border-bottom: 3px solid #fffafa;
@@ -172,11 +172,14 @@ h1 {
 }
 
 .card-container {
-    position: absolute;
+    position: fixed;
     margin-top: 3.75%;
     margin-left: 55%;
 }
 
+.positions-container {
+
+}
 .position {
     width: 100px;
     height: 50px;
