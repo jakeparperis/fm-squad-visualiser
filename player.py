@@ -3,14 +3,14 @@ import math
 
 class Player:
     def __init__(self, id, name, position, age, nationality, personality, squad_num, club, division,
-                 transfer_val, wage, injury, height, weight, left_foot, right_foot, pref_foot, int_caps, int_goals,
-                 szn_apps, avg_rating, szn_goals, szn_assists, acceleration, aerial_reach, aggression, agility,
-                 anticipation, balance, bravery, command_of_area, communication, composure, concentration, corners,
-                 crossing, decisions, determination, dribbling, eccentricity, finishing, first_touch, flair, free_kicks,
-                 handling, heading, jumping_reach, kicking, leadership, long_shots, long_throws, marking,
-                 natural_fitness, off_the_ball, one_on_ones, pace, passing, penalties, positioning, punching,
-                 reflexes, rushing_out, stamina, strength, tackling, teamwork, technique, throwing, vision,
-                 work_rate):
+                 transfer_val, wage, injury, height, weight, left_foot, right_foot, pref_foot, all_apps, all_goals,
+                 int_caps, int_goals, szn_apps, avg_rating, szn_xg, szn_goals, szn_assists, acceleration, aerial_reach,
+                 aggression, agility, anticipation, balance, bravery, command_of_area, communication, composure,
+                 concentration, corners, crossing, decisions, determination, dribbling, eccentricity, finishing,
+                 first_touch, flair, free_kicks, handling, heading, jumping_reach, kicking, leadership, long_shots,
+                 long_throws, marking, natural_fitness, off_the_ball, one_on_ones, pace, passing, penalties,
+                 positioning, punching, reflexes, rushing_out, stamina, strength, tackling, teamwork, technique,
+                 throwing, vision, work_rate):
 
         self.id = id
         self.name = name
@@ -29,10 +29,13 @@ class Player:
         self.left_foot = left_foot
         self.right_foot = right_foot
         self.pref_foot = pref_foot
+        self.all_apps = all_apps
+        self.all_goals = all_goals
         self.int_caps = int_caps
         self.int_goals = int_goals
         self.szn_apps = szn_apps
         self.avg_rating = avg_rating
+        self.szn_xg = szn_xg
         self.szn_goals = szn_goals
         self.szn_assists = szn_assists
         self.acceleration = int(acceleration)
@@ -136,6 +139,12 @@ class Player:
     def get_pref_foot(self):
         return self.pref_foot
 
+    def get_all_apps(self):
+        return self.all_apps
+
+    def get_all_goals(self):
+        return self.all_goals
+
     def get_int_caps(self):
         return self.int_caps
 
@@ -147,6 +156,9 @@ class Player:
 
     def get_avg_rating(self):
         return self.avg_rating
+
+    def get_szn_xg(self):
+        return self.szn_xg
 
     def get_szn_goals(self):
         return self.szn_goals

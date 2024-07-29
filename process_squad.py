@@ -35,7 +35,8 @@ def create_player_objects(players):
                             row[31], row[32], row[33], row[34], row[35], row[36], row[37], row[38], row[39], row[40],
                             row[41], row[42], row[43], row[44], row[45], row[46], row[47], row[48], row[49], row[50],
                             row[51], row[52], row[53], row[54], row[55], row[56], row[57], row[58], row[59], row[60],
-                            row[61], row[62], row[63], row[64], row[65], row[66], row[67], row[68], row[69]))
+                            row[61], row[62], row[63], row[64], row[65], row[66], row[67], row[68], row[69], row[70],
+                            row[71], row[72]))
     return squad
 
 
@@ -67,6 +68,12 @@ def calculate_player_info(squad):
         if squad_number == "-":
             squad_number = "#"
         personality = player.get_personality()
+        all_apps = player.get_all_apps()
+        if all_apps == "-":
+            all_apps = 0
+        all_goals = player.get_all_goals()
+        if all_goals == "-":
+            all_goals = 0
         int_caps = player.get_int_caps()
         if int_caps == "-":
             int_caps = 0
@@ -79,6 +86,9 @@ def calculate_player_info(squad):
         avg_rating = player.get_avg_rating()
         if avg_rating == "-":
             avg_rating = 0
+        szn_xg = player.get_szn_xg()
+        if szn_xg == "-":
+            szn_xg = 0
         szn_goals = player.get_szn_goals()
         if szn_goals == "-":
             szn_goals = 0
@@ -133,10 +143,13 @@ def calculate_player_info(squad):
                             'Division': division,
                             'Squad Number': squad_number,
                             'Personality': personality,
+                            'All Time Appearances': all_apps,
+                            'All Time Goals': all_goals,
                             'International Appearances': int_caps,
                             'International Goals': int_goals,
                             'Season Appearances': szn_apps,
                             'Average Rating': avg_rating,
+                            'Season xG': szn_xg,
                             'Season Goals': szn_goals,
                             'Season Assists': szn_assists,
                             'Best Overall': best_overall,
