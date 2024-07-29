@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squad Builder</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/squad_builder.css') }}">
+    <script src="{{ url_for('static', filename='js/view-player.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
@@ -27,6 +28,47 @@
             </div>
         </div>
 
-    </div>
+        <div class="column">
+            <h1>Squad</h1>
+            <div class="line-squad-header"></div>
+            <ul class="player-container">
+                {% for player in goalkeepers %}
+                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                        <div class="player-display">
+                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                            {{ player['Name'] }} {{ player['Best Overall'] }}
+                        </div>
+                    </li>
+                {% endfor %}
+                {% for player in defenders %}
+                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                        <div class="player-display">
+                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                            {{ player['Name'] }} {{ player['Best Overall'] }}
+                        </div>
+                    </li>
+                {% endfor %}
+                {% for player in midfielders %}
+                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                        <div class="player-display">
+                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                            {{ player['Name'] }} {{ player['Best Overall'] }}
+                        </div>
+                    </li>
+                {% endfor %}
+                {% for player in attackers %}
+                    <li onclick="viewPlayer('{{ player['Player ID'] }}')">
+                        <div class="player-display">
+                            <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
+                            {{ player['Name'] }} {{ player['Best Overall'] }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
 
+        <div class="pitch-container">
+            <img src="static/img/misc/pitch.svg" style="outline: 7.5px solid black" width="585px" height="905px" alt="">
+        </div>
+    </div>
 </body>
