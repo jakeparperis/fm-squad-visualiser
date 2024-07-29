@@ -99,12 +99,14 @@ form {
     align-items: center;
 }
 .home-container,
-.squad-container {
+.squad-container,
+.builder-container {
     display: flex;
     align-items: flex-end;
 }
 .home-image,
-.squad-image {
+.squad-image,
+.builder-image {
     width: 25px;
     height: 25px;
     padding: 5px;

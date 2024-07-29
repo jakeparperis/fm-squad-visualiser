@@ -62,10 +62,6 @@ body[data-theme="colour1"] {
     scrollbar-width: none;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 .navigation-container {
     position: absolute;
     background-color: #dadada;
@@ -76,7 +72,7 @@ body[data-theme="colour1"] {
     padding: 5px;
     height: 5%;
     width: 7.5%;
-    margin-top: -0.1%;
+    margin-top: -3.95%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -97,10 +93,4 @@ body[data-theme="colour1"] {
     padding: 5px;
     filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(25%) contrast(100%);
     display: block;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
 }

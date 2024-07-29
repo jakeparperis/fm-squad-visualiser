@@ -226,14 +226,16 @@ h1 {
     align-items: center;
 }
 .home-container,
-.squad-container {
+.squad-container,
+.builder-container {
     display: flex;
     align-items: flex-end;
 }
 .home-image,
-.squad-image {
+.squad-image,
+.builder-image {
     width: 25px;
-    height: 26px;
+    height: 25px;
     padding: 5px;
     filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(25%) contrast(100%);
     display: block;
