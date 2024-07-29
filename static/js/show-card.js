@@ -7,16 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(html => {
                 // Update modal content and show modal
-                document.getElementById('playerCardModal').innerHTML = html;
-                document.getElementById('playerCardModal').style.display = 'block';
+                const modal = document.getElementById('playerCardModal');
+                modal.innerHTML = html;
+                modal.style.display = 'block';
             })
             .catch(error => console.error('Error fetching player card:', error));
     };
 
     // Optionally, add event listener to close modal when clicking outside of it
     document.addEventListener('click', function(event) {
-        if (event.target.id === 'playerCardModal') {
-            event.target.style.display = 'none';
-        }
+        const modal = document.getElementById('playerCardModal');
     });
 });

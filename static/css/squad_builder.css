@@ -6,6 +6,7 @@ html, body {
 
 body {
     font-family: "Roboto Light", sans-serif;
+    font-size: 12px;
     scrollbar-width: none;
 }
 
@@ -105,7 +106,7 @@ body[data-theme="colour1"] {
 
 .line-squad-header {
     position: absolute;
-    top: 7.5%;
+    top: 6.75%;
     left: 10%;
     width: 80%;
     border-bottom: 3px solid #fffafa;
@@ -143,9 +144,9 @@ ul {
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 10px;
+    height: 15px;
     width: 200px;
-    font-size: 12px;
+    font-size: 14px;
     color: #f0f0f0;
 }
 .player-display img.flag {
@@ -174,4 +175,24 @@ h1 {
     position: absolute;
     margin-top: 3.75%;
     margin-left: 55%;
+}
+
+.position {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #222222;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #30342f;
+    position: absolute;
+    cursor: grab;
+    text-align: center;
+}
+.position:active {
+    cursor: grabbing;
+}
+.hide {
+    display: none;
 }
