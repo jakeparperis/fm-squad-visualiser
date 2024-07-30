@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/player_info_card.css') }}">
     <script src="{{ url_for('static', filename='js/show-card.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/drag-drop.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/generate-sb-image.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
 </head>
 
 <body data-theme="colour1">
@@ -79,7 +81,7 @@
 
         <div id="playerCardModal" class="card-container"></div>
 
-        <div class="pitch-container">
+        <div class="pitch-container" id="pitch">
             <img src="static/img/misc/pitch.svg" style="outline: 7.5px solid black" width="585px" height="905px" alt="">
             <div class="positions-container">
                 <div class="position" id="1" style="top: 87.5%; left: 41.25%;"  draggable="true"></div>
@@ -95,5 +97,13 @@
                 <div class="position" id="11" style="top: 40%; left: 73.75%;"  draggable="true"></div>
             </div>
         </div>
+
+        <div class="download-button-container">
+            <div class="download-tooltip">
+                <button class="downloadbtn" id="download-button">💾</button>
+                <span class="download-tooltiptext">Download Squad Image</span>
+            </div>
+        </div>
+
     </div>
 </body>

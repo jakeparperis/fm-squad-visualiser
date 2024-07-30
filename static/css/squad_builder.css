@@ -143,7 +143,7 @@ ul {
     padding: 10px 20px;
     margin: 1px;
     border-radius: 15px;
-    border: 2px solid #222222;
+    border: 1px solid #bababa;
     background-color: #30342f;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
@@ -154,8 +154,8 @@ ul {
     color: #f0f0f0;
 }
 .player-display img.flag {
-    max-width: 50px;
-    max-height: 10px;
+    max-width: 100px;
+    max-height: 20px;
     vertical-align: middle;
     text-align: left;
     margin-right: 5px;
@@ -177,8 +177,8 @@ h1 {
 
 .card-container {
     position: fixed;
-    margin-top: 3.75%;
-    margin-left: 55%;
+    margin-top: 2.75%;
+    margin-left: 53%;
 }
 
 .positions-container {
@@ -202,4 +202,50 @@ h1 {
 }
 .hide {
     display: none;
+}
+
+.download-button-container {
+    position: fixed;
+    margin-left: 64%;
+    margin-top: 2.5%;
+}
+.downloadbtn {
+    background-color: #dadada;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+.downloadbtn:hover {
+    background-color: #ffffff;
+}
+.download-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.download-tooltip .download-tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #30342f;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.download-tooltip:hover .download-tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
