@@ -16,13 +16,11 @@ def index():
 
     if request.method == 'POST':
         if 'file' not in request.files:
-            flash('No file found')
             return redirect(request.url)
 
         file = request.files['file']
 
         if file.filename == '':
-            flash('No file selected')
             return redirect(request.url)
 
         if file.filename.endswith('.html'):
@@ -74,9 +72,7 @@ def index():
 
             return redirect(url_for('squad_overview'))
         else:
-            flash('File must be html')
-
-        return redirect(url_for('index'))
+            return redirect(url_for('index'))
     return render_template('index.html', title='Home Page')
 
 
