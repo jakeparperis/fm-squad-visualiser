@@ -95,8 +95,8 @@ form {
     border-color: black;
     border-radius: 15px;
     padding: 5px;
-    height: 5%;
-    width: 7.5%;
+    height: 6%;
+    width: 8.5%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -105,13 +105,15 @@ form {
 }
 .home-container,
 .squad-container,
-.builder-container {
+.builder-container,
+.help-container {
     display: flex;
     align-items: flex-end;
 }
 .home-image,
 .squad-image,
-.builder-image {
+.builder-image,
+.help-image {
     width: 25px;
     height: 25px;
     padding: 5px;
@@ -119,51 +121,42 @@ form {
     display: block;
 }
 
+.yt-image {
+    width: 75px;
+    height: 75px;
+}
+.help-button {
+    all: unset;
+    cursor: pointer;
+
+}
+.help-section {
+    position: absolute;
+    margin-top: -2%;
+    margin-left: 2.5%;
+}
+.help-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.help-content.visible {
+    opacity: 1;
+}
+
 h2 {
-    font-size: 36px;
+    font-size: 32px;
+    margin-top: 25px;
     text-decoration: underline;
-    text-underline: #dadada ;
-    text-underline-offset: 25%;
-    margin-top: 15px;
+    text-underline: #ffffff;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 15px;
 }
 h3 {
-    font-size: 24px;
-    margin: 15px;
+    font-size: 26px;
+    margin-top: 35px;
 }
 h4 {
-    margin: 10px;
-}
-
-.features-container {
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 0%;
-    background-color: #dadada;
-    color: #222222;
-    border-radius: 25px;
-    width: 50%;
-    height: 70%;
-    padding: 20px 40px;
-}
-.features-content {
-    margin-top: -1%;
-    margin-left: 0%;
-}
-
-.guide-container {
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 55%;
-    background-color: #dadada;
-    color: #222222;
-    border-radius: 25px;
-    width: 39%;
-    height: 70%;
-    padding: 20px 40px;
-}
-.guide-content {
-    margin-top: -1%;
-    margin-left: 0%;
+    font-size: 18px;
 }
 
 ::-webkit-scrollbar {

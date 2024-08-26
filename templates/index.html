@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
     <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/help-button.js') }}" defer></script>
 </head>
 
 <body data-theme="colour1">
@@ -27,6 +28,11 @@
                     <img class="builder-image" src="{{ url_for('static', filename='img/misc/oi--wrench.png') }}" alt="">
                 </a>
             </div>
+            <div class="help-container">
+                <button id="helpButton" class="help-button">
+                    <img class="help-image" src="{{ url_for('static', filename='img/misc/oi--question-mark.png') }}" alt="">
+                </button>
+            </div>
         </div>
 
         <h1>FM Squad Visualiser</h1>
@@ -46,6 +52,27 @@
             <input type="file" name="file" accept=".html">
             <input class="upload-button" type="submit" value="Upload and go to squad">
         </form>
+
+        <div class="help-section">
+            <div id="helpContent" class="help-content">
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img class="yt-image" src="{{ url_for('static', filename='img/misc/youtube-icon.png') }}" alt="">
+                </a>
+                <h2>Features and Usage</h2>
+                <h3>Squad Overview:</h3>
+                <h4>• View your players by position, sorted by overall rating</h4>
+                <h4>• Click on players to go to their player info page</h4>
+                <h3>Player Info:</h3>
+                <h4>• Player card containing information about the player</h4>
+                <h4>• Graphic of the player's overall rating by position</h4>
+                <h4>• Summary of the player's career and season stats</h4>
+                <h3>Squad Builder:</h3>
+                <h4>• Click on players to display their player card</h4>
+                <h4>• Drag players into positions on the pitch to select your squad</h4>
+                <h4>• Drag positions on the pitch to customise the formation</h4>
+                <h4>• Click on the save button to download an image of your squad</h4>
+            </div>
+        </div>
     </div>
 
 </body>
