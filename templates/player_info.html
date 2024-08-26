@@ -60,17 +60,17 @@
             </div>
 
             <div class="navigation-container">
-                <div class="home-container">
+                <div class="home-container" data-tooltip="Home">
                     <a href="{{ url_for('index') }}">
                         <img class="home-image" src="{{ url_for('static', filename='img/misc/oi--home.png') }}" alt="">
                     </a>
                 </div>
-                <div class="squad-container">
+                <div class="squad-container" data-tooltip="Squad Overview">
                     <a href="{{ url_for('squad_overview') }}">
                         <img class="squad-image" src="{{ url_for('static', filename='img/misc/oi--people.png') }}" alt="">
                     </a>
                 </div>
-                <div class="builder-container">
+                <div class="builder-container" data-tooltip="Squad Builder">
                 <a href="{{ url_for('squad_builder') }}">
                     <img class="builder-image" src="{{ url_for('static', filename='img/misc/oi--wrench.png') }}" alt="">
                 </a>

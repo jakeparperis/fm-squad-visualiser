@@ -121,6 +121,95 @@ form {
     display: block;
 }
 
+.home-container::before {
+    position: absolute;
+    left: -7.5%;
+    top: 25%;
+    height: 35px;
+    width: 75px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    content: attr(data-tooltip);
+}
+.home-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.squad-container::before {
+    position: absolute;
+    left: 7.5%;
+    top: 0%;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    content: attr(data-tooltip);
+}
+.squad-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.builder-container::before {
+    position: absolute;
+    left: 30%;
+    top: 0%;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    content: attr(data-tooltip);
+}
+.builder-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.help-container::before {
+    position: absolute;
+    left: 60%;
+    top: 25%;
+    height: 35px;
+    width: 75px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    content: attr(data-tooltip);
+}
+.help-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
 .yt-image {
     width: 75px;
     height: 75px;
