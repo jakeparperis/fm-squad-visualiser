@@ -248,6 +248,9 @@ h1 {
     position: fixed;
     margin-top: 2.75%;
     margin-left: 53%;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    display: none;
 }
 
 .positions-container {
