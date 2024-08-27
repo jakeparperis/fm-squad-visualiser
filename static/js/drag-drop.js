@@ -8,10 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to handle the drag start event for player info (name and overall rating)
     function onPlayerInfoDragStart(event) {
-        draggedElement = event.target;
-        if (draggedElement.classList.contains('player-info')) {
-            event.dataTransfer.setData('text/plain', draggedElement.innerHTML); // Transfer player details
-            draggedElement.style.opacity = '0.5'; // Visual feedback
+    draggedElement = event.target;
+    if (draggedElement.classList.contains('player-info')) {
+        const playerName = draggedElement.childNodes[0].nodeValue.trim(); // Get the player's name only
+        const playerOvr = draggedElement.querySelector('.player-ovr').textContent.trim(); // Get the player's OVR
+
+        const playerInfo = `${playerName} ${playerOvr}`; // Combine name and OVR
+        event.dataTransfer.setData('text/plain', playerInfo); // Transfer player name and OVR
+        draggedElement.style.opacity = '0.5'; // Visual feedback
         }
     }
 

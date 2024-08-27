@@ -32,16 +32,18 @@
             </div>
         </div>
 
-        <div class="column">
-            <h1>Players</h1>
-            <div class="line-squad-header"></div>
+        <div class="squad-column">
+            <h1>Squad</h1>
+
             <ul class="player-container">
                 {% for player in goalkeepers %}
                     <li onclick="showCard('{{ player['Player ID'] }}')">
                         <div class="player-display">
                             <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
                             <div class="player-info" draggable="true">
-                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                                {{ player['Name'] }}
+                                <a class="player-ovr">{{ player['Best Overall'] }}</a>
+                                {{ player['Position'] }}
                             </div>
                         </div>
                     </li>
@@ -51,7 +53,9 @@
                         <div class="player-display">
                             <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
                             <div class="player-info" draggable="true">
-                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                                {{ player['Name'] }}
+                                <a class="player-ovr">{{ player['Best Overall'] }}</a>
+                                {{ player['Position'] }}
                             </div>
                         </div>
                     </li>
@@ -61,7 +65,9 @@
                         <div class="player-display">
                             <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
                             <div class="player-info" draggable="true">
-                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                                {{ player['Name'] }}
+                                <a class="player-ovr">{{ player['Best Overall'] }}</a>
+                                {{ player['Position'] }}
                             </div>
                         </div>
                     </li>
@@ -71,7 +77,9 @@
                         <div class="player-display">
                             <img class="flag" src="{{ url_for('static', filename='img/flags/20_13_flags/' + player['Nation'] + '.png') }}">
                             <div class="player-info" draggable="true">
-                                {{ player['Name'] }} {{ player['Best Overall'] }}
+                                {{ player['Name'] }}
+                                <a class="player-ovr">{{ player['Best Overall'] }}</a>
+                                {{ player['Position'] }}
                             </div>
                         </div>
                     </li>
@@ -82,7 +90,7 @@
         <div id="playerCardModal" class="card-container"></div>
 
         <div class="pitch-container" id="pitch">
-            <img src="static/img/misc/pitch.svg" style="outline: 7.5px solid black" width="585px" height="905px" alt="">
+            <img src="static/img/misc/pitch.svg" style="outline: 7.5px solid black" width="520px" height="800px" alt="">
             <div class="positions-container">
                 <div class="position" id="1" style="top: 87.5%; left: 41.25%;"  draggable="true"></div>
                 <div class="position" id="2" style="top: 67.5%; left: 73.75%;"  draggable="true"></div>

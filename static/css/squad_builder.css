@@ -73,6 +73,7 @@ body[data-theme="colour1"] {
     padding: 5px;
     height: 5%;
     width: 7.5%;
+    margin-top: -0.05%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -166,11 +167,11 @@ body[data-theme="colour1"] {
 
 .pitch-container {
     position: fixed;
-    margin-left: 62.5%;
-    margin-top: 0.5%;
+    margin-left: 32.35%;
+    margin-top: 1.325%;
     overflow: hidden;
 
-    font-family: cursive, sans-serif;
+    font-weight: bold;
 }
 
 .line-squad-header {
@@ -183,14 +184,15 @@ body[data-theme="colour1"] {
     z-index: 0;
     opacity: 50%;
 }
+
 ul {
     font-weight: bold;
     list-style-type: none;
 }
 
-.column {
+.squad-column {
     position: absolute;
-    left: 15%;
+    left: 12.5%;
     top: -3.75%;
     text-align: center;
 }
@@ -200,10 +202,13 @@ ul {
     flex-direction: column;
     align-items: center;
     color: #222222;
-    gap: 10px;
+    gap: 15px;
 }
 .player-info {
-    padding: 15px 30px;
+    padding: 2.5px 5px;
+}
+.player-ovr {
+    font-size: 16px;
 }
 .player-display {
     display: flex;
@@ -212,13 +217,13 @@ ul {
     padding: 10px 20px;
     margin: 1px;
     border-radius: 15px;
-    border: 1px solid #bababa;
+    border: 2px solid #222222;
     background-color: #30342f;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 20px;
-    width: 200px;
+    width: 250px;
     font-size: 14px;
     color: #f0f0f0;
 }
@@ -246,8 +251,8 @@ h1 {
 
 .card-container {
     position: fixed;
-    margin-top: 2.75%;
-    margin-left: 53%;
+    margin-top: 1%;
+    margin-left: 88.25%;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
     display: none;
@@ -278,7 +283,7 @@ h1 {
 
 .download-button-container {
     position: fixed;
-    margin-left: 64%;
+    margin-left: 33.25%;
     margin-top: 2.5%;
 }
 .downloadbtn {
@@ -302,6 +307,7 @@ h1 {
 .download-tooltip .download-tooltiptext {
     visibility: hidden;
     width: 160px;
+    height: 25px;
     background-color: #30342f;
     color: #ffffff;
     text-align: center;
@@ -313,8 +319,9 @@ h1 {
     left: 50%;
     margin-left: -80px;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
     white-space: nowrap;
+    align-content: center;
 }
 
 .download-tooltip:hover .download-tooltiptext {
