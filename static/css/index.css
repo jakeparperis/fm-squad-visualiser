@@ -210,10 +210,16 @@ form {
     visibility: visible;
 }
 
+.yt-container {
+    position: fixed;
+    margin-top: -0.375%;
+    margin-left: 10%;
+}
 .yt-image {
     width: 75px;
     height: 75px;
 }
+
 .help-button {
     all: unset;
     cursor: pointer;
@@ -221,7 +227,7 @@ form {
 }
 .help-section {
     position: absolute;
-    margin-top: -2%;
+    margin-top: 1.25%;
     margin-left: 2.5%;
 }
 .help-content {
