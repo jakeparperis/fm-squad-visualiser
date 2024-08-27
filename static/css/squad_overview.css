@@ -69,40 +69,38 @@ ul {
 
 .goalkeeper-column {
     position: absolute;
-    left: 15%;
-    top: 2.5%;
+    left: 11.25%;
+    top: 12.5%;
     text-align: center;
 }
 
 .defender-column {
     position: absolute;
-    left: 35%;
-    top: 2.5%;
+    left: 31.75%;
+    top: 12.5%;
     text-align: center;
 }
 
 .midfielder-column {
     position: absolute;
-    left: 55%;
-    top: 2.5%;
+    right: 31.75%;
+    top: 12.5%;
     text-align: center;
 }
 
 .attacker-column {
     position: absolute;
-    left: 75%;
-    top: 2.5%;
+    right: 11.25%;
+    top: 12.5%;
     text-align: center;
 }
 
 h2 {
     text-align: center;
     font-size: 36px;
-    margin-top: 0%;
+    margin-top: 1.25%;
 }
-h1 {
-    margin-top: 25%;
-}
+
 .player-container {
     padding: 5%;
     display: flex;
@@ -142,8 +140,8 @@ h1 {
 
 .line-gk-def {
     position: absolute;
-    top: 17.5%;
-    left: 32.875%;
+    top: 22.5%;
+    left: 29.25%;
     transform: translateX(-50%);
     width: 2px;
     background-color: #fffafa;
@@ -151,8 +149,8 @@ h1 {
 }
 .line-def-mid {
     position: absolute;
-    top: 17.5%;
-    left: 52.85%;
+    top: 22.5%;
+    left: 50%;
     transform: translateX(-50%);
     width: 2px;
     background-color: #fffafa;
@@ -160,17 +158,17 @@ h1 {
 }
 .line-mid-att {
     position: absolute;
-    top: 17.5%;
-    left: 72.875%;
+    top: 22.5%;
+    right: 29.25%;
     transform: translateX(-50%);
-    width: 2.5px;
+    width: 2px;
     background-color: #fffafa;
     opacity: 50%;
 }
 .line-gk-header {
     position: absolute;
-    top: 14.75%;
-    left: 16.75%;
+    top: 20%;
+    left: 13.125%;
     width: 12%;
     border-bottom: 3px solid #fffafa;
     transform-origin: center;
@@ -179,8 +177,8 @@ h1 {
 }
 .line-def-header {
     position: absolute;
-    top: 14.75%;
-    left: 36.75%;
+    top: 20%;
+    left: 33.75%;
     width: 12%;
     border-bottom: 3px solid #fffafa;
     transform-origin: center;
@@ -189,8 +187,8 @@ h1 {
 }
 .line-mid-header {
     position: absolute;
-    top: 14.75%;
-    left: 56.75%;
+    top: 20%;
+    right: 33.75%;
     width: 12%;
     border-bottom: 3px solid #fffafa;
     transform-origin: center;
@@ -199,8 +197,8 @@ h1 {
 }
 .line-att-header {
     position: absolute;
-    top: 14.5%;
-    left: 76.75%;
+    top: 20%;
+    right: 13.125%;
     width: 12%;
     border-bottom: 3px solid #fffafa;
     transform-origin: center;
@@ -218,7 +216,7 @@ h1 {
     padding: 5px;
     height: 5%;
     width: 7.5%;
-    margin-top: -3.75%;
+    margin-top: -5%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
