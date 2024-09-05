@@ -228,21 +228,27 @@ class Player:
         ovr = []
 
         if self.position == "GK":
-            gk_ovr = (self.aerial_reach * 0.1825 + self.command_of_area * 0.03 + self.communication * 0.03 +
-                      self.handling * 0.1825 + self.kicking * 0.03 + self.reflexes * 0.1825 +
-                      self.concentration * 0.03 + self.positioning * 0.03 + self.agility * 0.1825 +
-                      self.one_on_ones * 0.03 + self.throwing * 0.03 + self.anticipation * 0.03 + self.decisions * 0.03)
+            # GK-d
+            gk_ovr = (self.aerial_reach * 0.0833333333333333 + self.command_of_area * 0.0833333333333333 +
+                      self.communication * 0.0833333333333333 + self.handling * 0.0833333333333333 +
+                      self.kicking * 0.0833333333333333 + self.reflexes * 0.0833333333333333 +
+                      self.concentration * 0.0833333333333333 + self.positioning * 0.0833333333333333 +
+                      self.agility * 0.0833333333333333 + self.one_on_ones * 0.0625 +
+                      self.throwing * 0.0625 + self.anticipation * 0.0625 + self.decisions * 0.0625)
 
-            sk_ovr = (self.command_of_area * 0.03 + self.kicking * 0.03 + self.one_on_ones * 0.03 +
-                      self.reflexes * 0.1375 + self.rushing_out * 0.03 + self.anticipation * 0.03 +
-                      self.composure * 0.03 + self.concentration * 0.03 + self.positioning * 0.03 +
-                      self.agility * 0.1375 + self.aerial_reach * 0.1375 + self.communication * 0.03 +
-                      self.first_touch * 0.03 + self.handling * 0.1375 + self.passing * 0.03 + self.throwing * 0.03 +
-                      self.decisions * 0.03 + self.vision * 0.03 + self.acceleration * 0.03)
+            # SK-s
+            sk_ovr = (self.command_of_area * 0.075 + self.kicking * 0.075 + self.one_on_ones * 0.075 +
+                      self.reflexes * 0.075 + self.rushing_out * 0.075 + self.anticipation * 0.075 +
+                      self.composure * 0.075 + self.concentration * 0.075 + self.positioning * 0.075 +
+                      self.agility * 0.075 + self.aerial_reach * 0.0277777777777778 +
+                      self.communication * 0.0277777777777778 + self.first_touch * 0.0277777777777778 +
+                      self.handling * 0.0277777777777778 + self.passing * 0.0277777777777778 +
+                      self.throwing * 0.0277777777777778 + self.decisions * 0.0277777777777778 +
+                      self.vision * 0.0277777777777778 + self.acceleration * 0.0277777777777778)
 
-            gk_ovr = math.ceil(gk_ovr * 5.11875)
+            gk_ovr = math.ceil(gk_ovr * 5.5)
             gk_ovr = min(gk_ovr, 99)
-            sk_ovr = math.ceil(sk_ovr * 5.60625)
+            sk_ovr = math.ceil(sk_ovr * 5.5)
             sk_ovr = min(sk_ovr, 99)
 
             if gk_ovr > sk_ovr:
@@ -251,100 +257,110 @@ class Player:
                 ovr.append(sk_ovr)
 
         else:
-            # All outfield weightings are 0.75/nPrimary and 0.25/nSecondary
+            # All weightings are 0.75/nPrimary and 0.25/nSecondary
             # For example, FB-s weightings are 0.75/8 (0.09375) and 0.25/7 (0.0357142857142857)
+            # All positions have acceleration and pace added to the primary attributes if the role doesn't already
 
             ovr.append(0)
-            # Full Back - 1 - FB-s with 8 primary and 7 secondary attributes
+            # Full Back - 0 - FB-s with 8 primary and 7 secondary attributes
             fullback = (self.marking * 0.09375 + self.tackling * 0.09375 + self.anticipation * 0.09375 +
                         self.concentration * 0.09375 + self.positioning * 0.09375 + self.teamwork * 0.09375 +
                         self.acceleration * 0.09375 + self.pace * 0.09375 + self.crossing * 0.0357142857142857 +
                         self.dribbling * 0.0357142857142857 + self.passing * 0.0357142857142857 +
                         self.technique * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
                         self.decisions * 0.0357142857142857 + self.stamina * 0.0357142857142857)
-            fullback = math.ceil(fullback * 4.14375)
+            fullback = math.ceil(fullback * 5.5)
             fullback = min(fullback, 99)
             ovr.append(fullback)
 
-            # Wing Back - 2 - WB-a with 10 primary and 10 secondary attributes
+            # Wing Back - 1 - WB-a with 10 primary and 10 secondary attributes
             wingback = (self.crossing * 0.075 + self.dribbling * 0.075 + self.tackling * 0.075 +
                         self.technique * 0.075 + self.off_the_ball * 0.075 + self.teamwork * 0.075 +
                         self.work_rate * 0.075 + self.acceleration * 0.075 + self.pace * 0.075 + self.stamina * 0.075 +
                         self.first_touch * 0.025 + self.marking * 0.025 + self.passing * 0.025 +
                         self.anticipation * 0.025 + self.concentration * 0.025 + self.decisions * 0.025 +
                         self.flair * 0.025 + self.positioning * 0.025 + self.agility * 0.025 + self.balance * 0.025)
-            wingback = math.ceil(wingback * 5.60625)
+            wingback = math.ceil(wingback * 5.5)
             wingback = min(wingback, 99)
             ovr.append(wingback)
 
-            # Centre Back - 3 - CD-d with 8 primary and 6 secondary attributes
+            # Centre Back - 2 - CD-d with 8 primary and 6 secondary attributes
             centreback = (self.heading * 0.09375 + self.marking * 0.09375 + self.tackling * 0.09375 +
                           self.positioning * 0.09375 + self.jumping_reach * 0.09375 + self.strength * 0.09375 +
                           self.acceleration * 0.09375 + self.pace * 0.09375 + self.aggression * 0.0416666666666667 +
                           self.anticipation * 0.0416666666666667 + self.bravery * 0.0416666666666667 +
                           self.composure * 0.0416666666666667 + self.concentration * 0.0416666666666667 +
                           self.decisions * 0.0416666666666667)
-            centreback = math.ceil(centreback * 5.3625)
+            centreback = math.ceil(centreback * 5.5)
             centreback = min(centreback, 99)
             ovr.append(centreback)
 
-            # Defensive Midfielder - 4
-            dmid = (self.tackling * 0.15 + self.anticipation * 0.15 + self.concentration * 0.15 +
-                    self.positioning * 0.15 + self.teamwork * 0.15 + self.first_touch * 0.03 + self.marking * 0.03 +
-                    self.passing * 0.03 + self.aggression * 0.03 + self.composure * 0.03 + self.decisions * 0.03 +
-                    self.work_rate * 0.03 + self.stamina * 0.03 + self.strength)
-            dmid = math.ceil(dmid * 2.68125)
+            # Defensive Midfielder - 3 - DM-s with 7 primary and 9 secondary attributes
+            dmid = (self.tackling * 0.1071428571428571 + self.anticipation * 0.1071428571428571 +
+                    self.concentration * 0.1071428571428571 + self.positioning * 0.1071428571428571 +
+                    self.teamwork * 0.1071428571428571 + self.acceleration * 0.1071428571428571 +
+                    self.pace * 0.1071428571428571 + self.first_touch * 0.0277777777777778 +
+                    self.marking * 0.0277777777777778 + self.passing * 0.0277777777777778 +
+                    self.aggression * 0.0277777777777778 + self.composure * 0.0277777777777778 +
+                    self.decisions * 0.0277777777777778 + self.work_rate * 0.0277777777777778 +
+                    self.stamina * 0.0277777777777778 + self.strength * 0.0277777777777778)
+            dmid = math.ceil(dmid * 5.5)
             dmid = min(dmid, 99)
             ovr.append(dmid)
 
-            # Central Midfielder - 5
-            cmid = (self.first_touch * 0.15 + self.passing * 0.15 + self.tackling * 0.15 + self.decisions * 0.15 +
-                    self.teamwork * 0.15 + self.technique * 0.025 + self.anticipation * 0.025 +
-                    self.composure * 0.025 + self.concentration * 0.025 + self.off_the_ball * 0.025 +
-                    self.vision * 0.025 + self.work_rate * 0.025 + self.stamina * 0.025 + self.pace * 0.025 +
-                    self.acceleration * 0.025)
-            cmid = math.ceil(cmid * 5.484375)
+            # Central Midfielder - 4 - CM-s with 7 primary and 8 secondary attributes
+            cmid = (self.first_touch * 0.1071428571428571 + self.passing * 0.1071428571428571 +
+                    self.tackling * 0.1071428571428571 + self.decisions * 0.1071428571428571 +
+                    self.teamwork * 0.1071428571428571 + self.acceleration * 0.1071428571428571 +
+                    self.pace * 0.1071428571428571 + self.technique * 0.03125 + self.anticipation * 0.03125 +
+                    self.composure * 0.03125 + self.concentration * 0.03125 + self.off_the_ball * 0.03125 +
+                    self.vision * 0.03125 + self.work_rate * 0.03125 + self.stamina * 0.03125)
+            cmid = math.ceil(cmid * 5.5)
             cmid = min(cmid, 99)
             ovr.append(cmid)
 
-            # Attacking Midfielder - 6
-            amid = (self.first_touch * 0.09375 + self.long_shots * 0.09375 + self.passing * 0.09375 +
-                    self.technique * 0.09375 + self.anticipation * 0.09375 + self.decisions * 0.09375 +
-                    self.flair * 0.09375 + self.off_the_ball * 0.09375 + self.dribbling * 0.0416666666666667
-                    + self.composure * 0.0416666666666667 + self.vision * 0.0416666666666667 +
-                    self.agility * 0.0416666666666667 + self.pace * 0.0416666666666667 +
-                    self.acceleration * 0.0416666666666667)
-            amid = math.ceil(amid * 5.60625)
+            # Attacking Midfielder - 5 - AM-s with 11 primary and 4 secondary attributes
+            amid = (self.first_touch * 0.0681818181818182 + self.long_shots * 0.0681818181818182 +
+                    self.passing * 0.0681818181818182 + self.technique * 0.0681818181818182 +
+                    self.anticipation * 0.0681818181818182 + self.decisions * 0.0681818181818182 +
+                    self.flair * 0.0681818181818182 + self.off_the_ball * 0.0681818181818182 +
+                    self.acceleration * 0.0681818181818182 + self.pace * 0.0681818181818182 +
+                    self.dribbling * 0.0625 + self.composure * 0.0625 + self.vision * 0.0625 + self.agility * 0.0625)
+            amid = math.ceil(amid * 5.5)
             amid = min(amid, 99)
             ovr.append(amid)
 
-            # Winger - 7
-            winger = (self.crossing * 0.15 + self.dribbling * 0.15 + self.technique * 0.15 + self.acceleration * 0.15 +
-                      self.agility * 0.15 + self.first_touch * 0.0357142857142857 + self.passing * 0.0357142857142857 +
-                      self.off_the_ball * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
-                      self.balance * 0.0357142857142857 + self.pace * 0.0357142857142857
-                      + self.stamina * 0.0357142857142857)
-            winger = math.ceil(winger * 5.3625)
+            # Winger - 6 - W-s with 6 primary and 6 secondary attributes
+            winger = (self.crossing * 0.125 + self.dribbling * 0.125 + self.technique * 0.125 +
+                      self.acceleration * 0.125 + self.agility * 0.125 + self.pace * 0.125 +
+                      self.first_touch * 0.0416666666666667 + self.passing * 0.0416666666666667 +
+                      self.off_the_ball * 0.0416666666666667 + self.work_rate * 0.0416666666666667 +
+                      self.balance * 0.0416666666666667 + self.stamina * 0.0416666666666667)
+            winger = math.ceil(winger * 5.5)
             winger = min(winger, 99)
             ovr.append(winger)
 
-            # Inside Forward - 8
-            fwd = (self.dribbling * 0.09375 + self.finishing * 0.09375 + self.first_touch * 0.09375 +
-                   self.technique * 0.09375 + self.anticipation * 0.09375 + self.off_the_ball * 0.09375 +
-                   self.acceleration * 0.09375 + self.agility * 0.09375 + self.long_shots * 0.03125 +
-                   self.passing * 0.03125 + self.composure * 0.03125 + self.flair * 0.03125 +
-                   self.work_rate * 0.03125 + self.balance * 0.03125 + self.pace * 0.03125 +
-                   self.stamina * 0.03125)
-            fwd = math.ceil(fwd * 5.3625)
+            # Inside Forward - 7 - IF-a with 9 primary and 7 secondary attributes
+            fwd = (self.dribbling * 0.0833333333333333 + self.finishing * 0.0833333333333333 +
+                   self.first_touch * 0.0833333333333333 + self.technique * 0.0833333333333333 +
+                   self.anticipation * 0.0833333333333333 + self.off_the_ball * 0.0833333333333333 +
+                   self.acceleration * 0.0833333333333333 + self.agility * 0.0833333333333333 +
+                   self.pace * 0.0833333333333333 + self.long_shots * 0.0357142857142857 +
+                   self.passing * 0.0357142857142857 + self.composure * 0.0357142857142857 +
+                   self.flair * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
+                   self.balance * 0.0357142857142857 + self.stamina * 0.0357142857142857)
+            fwd = math.ceil(fwd * 5.5)
             fwd = min(fwd, 99)
             ovr.append(fwd)
 
-            # Striker - 9
-            striker = (self.dribbling * 0.07 + self.finishing * 0.07 + self.first_touch * 0.07 +
-                       self.heading * 0.07 + self.technique * 0.07 + self.anticipation * 0.07 +
-                       self.composure * 0.07 + self.off_the_ball * 0.07 + self.acceleration * 0.07 +
-                       self.agility * 0.07 + self.strength * 0.07)
-            striker = math.ceil(striker * 7.190625)
+            # Striker - 8 - AF-a with 8 primary and 7 secondary attributes
+            striker = (self.dribbling * 0.09375 + self.finishing * 0.09375 + self.first_touch * 0.09375 +
+                       self.technique * 0.09375 + self.composure * 0.09375 + self.off_the_ball * 0.09375 +
+                       self.acceleration * 0.09375 + self.pace * 0.09375 + self.passing * 0.0357142857142857 +
+                       self.anticipation * 0.0357142857142857 + self.decisions * 0.0357142857142857 +
+                       self.work_rate * 0.0357142857142857 + self.agility * 0.0357142857142857 +
+                       self.balance * 0.0357142857142857 + self.stamina * 0.0357142857142857)
+            striker = math.ceil(striker * 5.5)
             striker = min(striker, 99)
             ovr.append(striker)
 

@@ -54,14 +54,10 @@ def find_best_position(player):
         best_position = ""
         highest = -1
         position_overalls = player.calculate_overall()
-        print(len(position_overalls))
-        print(len(positions))
         for i in range(9):
             if position_overalls[i+1] > highest:
                 highest = position_overalls[i+1]
                 best_position = positions[i]
-                print(player.get_name() + " " + str(highest))
-        print(player.get_name() + " " + best_position)
     else:
         best_position = "GK"
 
