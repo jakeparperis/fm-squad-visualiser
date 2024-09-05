@@ -302,18 +302,22 @@ class Player:
                 ovr.append(sk_ovr)
 
         else:
+            # All outfield weightings are 0.75/nPrimary and 0.25/nSecondary
+            # For example, FB-s weightings are 0.75/8 (0.09375) and 0.25/7 (0.0357142857142857)
+
             ovr.append(0)
-            # Full Back - 1
-            fullback = (self.marking * 0.125 + self.tackling * 0.125 + self.anticipation * 0.125 +
-                        self.concentration * 0.125 + self.positioning * 0.125 + self.teamwork * 0.125 +
-                        self.crossing * 0.03125 + self.dribbling * 0.03125 + self.passing * 0.03125 +
-                        self.technique * 0.03125 + self.work_rate * 0.03125 + self.decisions * 0.03125 +
-                        self.pace * 0.03125 + self.stamina * 0.3125)
+            # Full Back - 1 - FB-s with 8 primary and 7 secondary attributes
+            fullback = (self.marking * 0.09375 + self.tackling * 0.09375 + self.anticipation * 0.09375 +
+                        self.concentration * 0.09375 + self.positioning * 0.09375 + self.teamwork * 0.09375 +
+                        self.acceleration * 0.09375 + self.pace * 0.09375 + self.crossing * 0.0357142857142857 +
+                        self.dribbling * 0.0357142857142857 + self.passing * 0.0357142857142857 +
+                        self.technique * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
+                        self.decisions * 0.0357142857142857 + self.stamina * 0.0357142857142857)
             fullback = math.ceil(fullback * 4.14375)
             fullback = min(fullback, 99)
             ovr.append(fullback)
 
-            # Wing Back - 2
+            # Wing Back - 2 - WB-a with 10 primary and 10 secondary attributes
             wingback = (self.crossing * 0.075 + self.dribbling * 0.075 + self.tackling * 0.075 +
                         self.technique * 0.075 + self.off_the_ball * 0.075 + self.teamwork * 0.075 +
                         self.work_rate * 0.075 + self.acceleration * 0.075 + self.pace * 0.075 + self.stamina * 0.075 +
@@ -324,12 +328,13 @@ class Player:
             wingback = min(wingback, 99)
             ovr.append(wingback)
 
-            # Centre Back - 3
-            centreback = (self.heading * 0.125 + self.marking * 0.125 + self.tackling * 0.125 +
-                          self.positioning * 0.125 + self.jumping_reach * 0.125 + self.strength * 0.125 +
-                          self.aggression * 0.0358 + self.anticipation * 0.0358 + self.bravery * 0.0358 +
-                          self.composure * 0.0358 + self.concentration * 0.0358 + self.decisions * 0.0358 +
-                          self.pace * 0.0358)
+            # Centre Back - 3 - CD-d with 8 primary and 6 secondary attributes
+            centreback = (self.heading * 0.09375 + self.marking * 0.09375 + self.tackling * 0.09375 +
+                          self.positioning * 0.09375 + self.jumping_reach * 0.09375 + self.strength * 0.09375 +
+                          self.acceleration * 0.09375 + self.pace * 0.09375 + self.aggression * 0.0416666666666667 +
+                          self.anticipation * 0.0416666666666667 + self.bravery * 0.0416666666666667 +
+                          self.composure * 0.0416666666666667 + self.concentration * 0.0416666666666667 +
+                          self.decisions * 0.0416666666666667)
             centreback = math.ceil(centreback * 5.3625)
             centreback = min(centreback, 99)
             ovr.append(centreback)
