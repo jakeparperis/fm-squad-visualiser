@@ -210,6 +210,56 @@ form {
     visibility: visible;
 }
 
+.yt-container::before {
+    position: absolute;
+    left: 0%;
+    top: 40%;
+    height: 35px;
+    width: 75px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    font-size: 14px;
+
+    content: attr(data-tooltip);
+}
+.yt-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reddit-container::before {
+    position: absolute;
+    left: 0%;
+    top: 45%;
+    height: 35px;
+    width: 75px;
+    border-radius: 10px;
+    background: #30342f;
+    text-align: center;
+    align-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    font-size: 14px;
+
+    content: attr(data-tooltip);
+}
+.reddit-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
 .yt-container {
     position: fixed;
     margin-top: -0.375%;
@@ -218,6 +268,28 @@ form {
 .yt-image {
     width: 75px;
     height: 75px;
+}
+
+.reddit-container {
+    position: fixed;
+    margin-top: -0.125%;
+    margin-left: 15%;
+}
+.reddit-image {
+    width: 65px;
+    height: 65px;
+}
+
+.tip-container {
+    position: fixed;
+    background-color: #dadada;
+    border-radius: 25px;
+    margin-top: 0%;
+    margin-left: 84.825%;
+}
+.tip-image {
+    width: 200px;
+    height: 100px;
 }
 
 .help-button {
