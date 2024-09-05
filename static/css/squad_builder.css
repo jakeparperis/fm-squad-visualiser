@@ -71,8 +71,8 @@ body[data-theme="colour1"] {
     border-color: black;
     border-radius: 15px;
     padding: 5px;
-    height: 5%;
-    width: 7.5%;
+    height: 6%;
+    width: 8.5%;
     margin-top: -0.05%;
     text-align: center;
     box-sizing: border-box;
@@ -97,8 +97,8 @@ body[data-theme="colour1"] {
 }
 .home-container::before {
     position: absolute;
-    left: -2.5%;
-    top: 12.5%;
+    left: 4%;
+    top: 25%;
     height: 35px;
     width: 75px;
     border-radius: 10px;
@@ -120,8 +120,8 @@ body[data-theme="colour1"] {
 }
 .squad-container::before {
     position: absolute;
-    left: 12.5%;
-    top: -17.5%;
+    left: 18.75%;
+    top: 0%;
     height: 50px;
     width: 100px;
     border-radius: 10px;
@@ -144,7 +144,7 @@ body[data-theme="colour1"] {
 .builder-container::before {
     position: absolute;
     left: 40%;
-    top: -17.5%;
+    top: 0%;
     height: 50px;
     width: 100px;
     border-radius: 10px;

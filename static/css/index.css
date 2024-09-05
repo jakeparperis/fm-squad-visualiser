@@ -145,7 +145,7 @@ form {
 }
 .squad-container::before {
     position: absolute;
-    left: 7.5%;
+    left: 8.75%;
     top: 0%;
     height: 50px;
     width: 100px;
