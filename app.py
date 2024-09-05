@@ -50,7 +50,7 @@ def index():
                     'Season Assists': info['Season Assists'],
                     'Best Overall': info['Best Overall'],
                     'Position Overalls': info['Position Overalls'],
-                    'Position': position['Position'],
+                    'Position': info['Best Position'],
                     'Pace': info['Pace'],
                     'Shooting': info['Shooting'],
                     'Passing': info['Passing'],
@@ -88,11 +88,11 @@ def squad_overview():
         pos = player_data['Position']
         if pos == "GK":
             goalkeepers.append(player_data)
-        elif pos == "DEF":
+        elif pos == "CB" or pos == "FB" or pos == "WB":
             defenders.append(player_data)
-        elif pos == "MID":
+        elif pos == "CDM" or pos == "CM" or pos == "CAM" or pos == "WM":
             midfielders.append(player_data)
-        elif pos == "ATT":
+        elif pos == "FW" or pos == "ST":
             attackers.append(player_data)
 
     sort_by = request.args.get('sort_by', 'Best Overall')
@@ -117,11 +117,11 @@ def squad_builder():
         pos = player_data['Position']
         if pos == "GK":
             goalkeepers.append(player_data)
-        elif pos == "DEF":
+        elif pos == "CB" or pos == "FB" or pos == "WB":
             defenders.append(player_data)
-        elif pos == "MID":
+        elif pos == "CDM" or pos == "CM" or pos == "CAM" or pos == "WM":
             midfielders.append(player_data)
-        elif pos == "ATT":
+        elif pos == "FW" or pos == "ST":
             attackers.append(player_data)
 
     sort_by = request.args.get('sort_by', 'Best Overall')

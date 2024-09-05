@@ -213,57 +213,6 @@ class Player:
         physical = min(physical, 99)
         return physical
 
-    def find_position(self):
-        pos = "debug-undefined"
-        player_positions = self.position
-
-        def_positions = ["D", "D (R)", "D (C)", "D (L)", "D (RC)", "D (LC)", "D (RL)", "D (RLC)", "WB", "WB (R)",
-                         "WB (L)", "WB (RL)"]
-        mid_positions = ["DM", "M (R)", "M (R)", "M", "M (C)", "M (L)", "M (RC)", "M (LC)", "M (RL)", "M (RLC)"]
-        att_mid_positions = ["AM", "AM (R)", "AM (C)", "AM (L)", "AM (RC)", "AM (LC)", "AM (RL)", "AM (RLC)"]
-
-        def_count = 0
-        mid_count = 0
-        att_mid_count = 0
-
-        for position in def_positions:
-            if position in player_positions:
-                def_count += 1
-        for position in mid_positions:
-            if position in player_positions:
-                mid_count += 1
-        for position in att_mid_positions:
-            if position in player_positions:
-                att_mid_count += 1
-
-        if player_positions.startswith("AM"):
-            mid_count = 0
-
-        # Defender cases
-        if def_count > 0:
-            if def_count > mid_count and def_count > att_mid_count:
-                pos = "DEF"
-            if def_count == mid_count:
-                pos = "DEF"
-
-        # Midfielder cases
-        if mid_count > 0 or att_mid_count > 0:
-            if (mid_count > def_count or att_mid_count > def_count) and "ST" not in player_positions:
-                pos = "MID"
-            if ((mid_count + att_mid_count) > 1) and def_count < 2:
-                pos = "MID"
-
-        # Attacker cases
-        if "ST (C)" in player_positions:
-            if def_count < 1 and (mid_count + att_mid_count) < 5:
-                pos = "ATT"
-
-        # Goalkeeper cases
-        if "GK" in player_positions:
-            pos = "GK"
-
-        return pos
-
     def calculate_overall(self):
         # Positions by index:
         # FB = 0

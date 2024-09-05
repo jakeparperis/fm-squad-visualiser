@@ -47,17 +47,41 @@ def initialise_squad(file):
     return squad
 
 
+def find_best_position(player):
+    if player.get_position() != "GK":
+
+        positions = ["FB", "WB", "CB", "CDM", "CM", "CAM", "WM", "FW", "ST"]
+        best_position = ""
+        highest = -1
+        position_overalls = player.calculate_overall()
+        print(len(position_overalls))
+        print(len(positions))
+        for i in range(9):
+            if position_overalls[i+1] > highest:
+                highest = position_overalls[i+1]
+                best_position = positions[i]
+                print(player.get_name() + " " + str(highest))
+        print(player.get_name() + " " + best_position)
+    else:
+        best_position = "GK"
+
+    return best_position
+
+
 # Returns a list of each player's position (Goalkeeper, Defender, Midfielder, Attacker)
 def store_positions(squad):
     positions = []
     for player in squad:
-        positions.append({'Position': player.find_position()})
+        best_position = find_best_position(player)
+        positions.append({'Position': best_position})
     return positions
 
 
 def calculate_player_info(squad):
     player_info = []
     for player in squad:
+        best_position = find_best_position(player)
+
         player_id = player.get_id()
         nation = player.get_nationality()
         name = player.get_name()
@@ -129,11 +153,9 @@ def calculate_player_info(squad):
             else:
                 final_position_overalls.append(ovr)
 
-        if player.find_position() == "GK":
+        if player.get_position() == "GK":
             for i in range(9):
                 final_position_overalls.append("N/A")
-
-        positions = ["FB", "WB", "CB", "DM", "CM", "AM", "W", "IF", "ST"]
 
         player_info.append({'Player ID': player_id,
                             'Nation': nation,
@@ -154,6 +176,7 @@ def calculate_player_info(squad):
                             'Season Assists': szn_assists,
                             'Best Overall': best_overall,
                             'Position Overalls': final_position_overalls,
+                            'Best Position': best_position,
                             'Pace': pac,
                             'Shooting': sho,
                             'Passing': pas,
