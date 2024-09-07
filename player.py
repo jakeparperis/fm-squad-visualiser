@@ -246,14 +246,16 @@ class Player:
                       self.throwing * 0.0277777777777778 + self.decisions * 0.0277777777777778 +
                       self.vision * 0.0277777777777778 + self.acceleration * 0.0277777777777778)
 
-            gk_ovr = math.ceil(gk_ovr * 5.5)
+            gk_ovr = math.ceil(gk_ovr * 5.55)
             gk_ovr = min(gk_ovr, 99)
             sk_ovr = math.ceil(sk_ovr * 5.5)
             sk_ovr = min(sk_ovr, 99)
 
             if gk_ovr > sk_ovr:
+                print(self.name + "GK")
                 ovr.append(gk_ovr)
             else:
+                print(self.name + "SK")
                 ovr.append(sk_ovr)
 
         else:
@@ -269,7 +271,7 @@ class Player:
                         self.dribbling * 0.0357142857142857 + self.passing * 0.0357142857142857 +
                         self.technique * 0.0357142857142857 + self.work_rate * 0.0357142857142857 +
                         self.decisions * 0.0357142857142857 + self.stamina * 0.0357142857142857)
-            fullback = math.ceil(fullback * 5.5)
+            fullback = math.ceil(fullback * 5.55)
             fullback = min(fullback, 99)
             ovr.append(fullback)
 
@@ -304,7 +306,7 @@ class Player:
                     self.aggression * 0.0277777777777778 + self.composure * 0.0277777777777778 +
                     self.decisions * 0.0277777777777778 + self.work_rate * 0.0277777777777778 +
                     self.stamina * 0.0277777777777778 + self.strength * 0.0277777777777778)
-            dmid = math.ceil(dmid * 5.5)
+            dmid = math.ceil(dmid * 5.55)
             dmid = min(dmid, 99)
             ovr.append(dmid)
 
@@ -326,7 +328,7 @@ class Player:
                     self.flair * 0.0681818181818182 + self.off_the_ball * 0.0681818181818182 +
                     self.acceleration * 0.0681818181818182 + self.pace * 0.0681818181818182 +
                     self.dribbling * 0.0625 + self.composure * 0.0625 + self.vision * 0.0625 + self.agility * 0.0625)
-            amid = math.ceil(amid * 5.5)
+            amid = math.ceil(amid * 5.75)
             amid = min(amid, 99)
             ovr.append(amid)
 
