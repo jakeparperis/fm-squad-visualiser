@@ -18,15 +18,31 @@
                     <img class="home-image" src="{{ url_for('static', filename='img/misc/oi--home.png') }}" alt="">
                 </a>
             </div>
-            <div class="squad-container" data-tooltip="Squad Overview">
-                <a href="{{ url_for('squad_overview') }}">
-                    <img class="squad-image" src="{{ url_for('static', filename='img/misc/oi--people.png') }}" alt="">
-                </a>
+            <div class="squad-container" data-tooltip="{{ 'No squad data' if 'squad_data' not in session else 'Squad Overview' }}">
+                {% if 'squad_data' in session %}
+                    <a href="{{ url_for('squad_overview') }}">
+                {% else %}
+                    <span>
+                {% endif %}
+                        <img class="squad-image" src="{{ url_for('static', filename='img/misc/oi--people.png') }}" alt="">
+                {% if 'squad_data' in session %}
+                    </a>
+                {% else %}
+                    </span>
+                {% endif %}
             </div>
-            <div class="builder-container" data-tooltip="Squad Builder">
-                <a href="{{ url_for('squad_builder') }}">
-                    <img class="builder-image" src="{{ url_for('static', filename='img/misc/oi--wrench.png') }}" alt="">
-                </a>
+            <div class="builder-container" data-tooltip="{{ 'No squad data' if 'squad_data' not in session else 'Squad Builder' }}">
+                {% if 'squad_data' in session %}
+                    <a href="{{ url_for('squad_builder') }}">
+                {% else %}
+                    <span>
+                {% endif %}
+                        <img class="builder-image" src="{{ url_for('static', filename='img/misc/oi--wrench.png') }}" alt="">
+                {% if 'squad_data' in session %}
+                    </a>
+                {% else %}
+                    </span>
+                {% endif %}
             </div>
             <div class="help-container" data-tooltip="Help">
                 <button id="helpButton" class="help-button">
