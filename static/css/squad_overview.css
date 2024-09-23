@@ -214,8 +214,8 @@ h2 {
     border-color: black;
     border-radius: 15px;
     padding: 5px;
-    height: 6%;
-    width: 8.5%;
+    height: 56.25px;
+    width: 162.5px;
     margin-top: -4%;
     text-align: center;
     box-sizing: border-box;
@@ -237,6 +237,7 @@ h2 {
     padding: 5px;
     filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(25%) contrast(100%);
     display: block;
+    margin-top: 2%;
 }
 .home-container::before {
     position: absolute;
