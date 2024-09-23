@@ -24,53 +24,56 @@ def index():
             return redirect(request.url)
 
         if file.filename.endswith('.html'):
-            squad = initialise_squad(file)  # List of Player objects
-            player_info = calculate_player_info(squad)  # List of dicts
-            positions = store_positions(squad)  # List of strings
+            try:
+                squad = initialise_squad(file)  # List of Player objects
+                player_info = calculate_player_info(squad)  # List of dicts
+                positions = store_positions(squad)  # List of strings
 
-            squad_data = []
-            for info, position in zip(player_info, positions):
-                player_data = {
-                    'Player ID': info['Player ID'],
-                    'Nation': info['Nation'],
-                    'Name': info['Name'],
-                    'Age': info['Age'],
-                    'Club': info['Club'],
-                    'Division': info['Division'],
-                    'Squad Number': info['Squad Number'],
-                    'Personality': info['Personality'],
-                    'All Time Appearances': info['All Time Appearances'],
-                    'All Time Goals': info['All Time Goals'],
-                    'International Appearances': info['International Appearances'],
-                    'International Goals': info['International Goals'],
-                    'Season Appearances': info['Season Appearances'],
-                    'Average Rating': info['Average Rating'],
-                    'Season xG': info['Season xG'],
-                    'Season Goals': info['Season Goals'],
-                    'Season Assists': info['Season Assists'],
-                    'Best Overall': info['Best Overall'],
-                    'Position Overalls': info['Position Overalls'],
-                    'Position': info['Best Position'],
-                    'Pace': info['Pace'],
-                    'Shooting': info['Shooting'],
-                    'Passing': info['Passing'],
-                    'Dribbling': info['Dribbling'],
-                    'Defending': info['Defending'],
-                    'Physical': info['Physical'],
-                    'Skill Moves': info['Skill Moves'],
-                    'Weak Foot': info['Weak Foot'],
-                    'Preferred Foot': info['Preferred Foot'],
-                    'Height': info['Height'],
-                    'Weight': info['Weight'],
-                    'Transfer Value': info['Transfer Value'],
-                    'Wage': info['Wage'],
-                    'Injury': info['Injury']
-                }
-                squad_data.append(player_data)
+                squad_data = []
+                for info, position in zip(player_info, positions):
+                    player_data = {
+                        'Player ID': info['Player ID'],
+                        'Nation': info['Nation'],
+                        'Name': info['Name'],
+                        'Age': info['Age'],
+                        'Club': info['Club'],
+                        'Division': info['Division'],
+                        'Squad Number': info['Squad Number'],
+                        'Personality': info['Personality'],
+                        'All Time Appearances': info['All Time Appearances'],
+                        'All Time Goals': info['All Time Goals'],
+                        'International Appearances': info['International Appearances'],
+                        'International Goals': info['International Goals'],
+                        'Season Appearances': info['Season Appearances'],
+                        'Average Rating': info['Average Rating'],
+                        'Season xG': info['Season xG'],
+                        'Season Goals': info['Season Goals'],
+                        'Season Assists': info['Season Assists'],
+                        'Best Overall': info['Best Overall'],
+                        'Position Overalls': info['Position Overalls'],
+                        'Position': info['Best Position'],
+                        'Pace': info['Pace'],
+                        'Shooting': info['Shooting'],
+                        'Passing': info['Passing'],
+                        'Dribbling': info['Dribbling'],
+                        'Defending': info['Defending'],
+                        'Physical': info['Physical'],
+                        'Skill Moves': info['Skill Moves'],
+                        'Weak Foot': info['Weak Foot'],
+                        'Preferred Foot': info['Preferred Foot'],
+                        'Height': info['Height'],
+                        'Weight': info['Weight'],
+                        'Transfer Value': info['Transfer Value'],
+                        'Wage': info['Wage'],
+                        'Injury': info['Injury']
+                    }
+                    squad_data.append(player_data)
 
-            session['squad_data'] = squad_data
+                session['squad_data'] = squad_data
 
-            return redirect(url_for('squad_overview'))
+                return redirect(url_for('squad_overview'))
+            except Exception as e:
+                return redirect(url_for('index'))
         else:
             return redirect(url_for('index'))
     return render_template('index.html', title='Home Page')
