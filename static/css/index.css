@@ -263,7 +263,7 @@ form {
 .yt-container {
     position: fixed;
     margin-top: -0.375%;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 .yt-image {
     width: 75px;
@@ -273,7 +273,7 @@ form {
 .reddit-container {
     position: fixed;
     margin-top: -0.125%;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 .reddit-image {
     width: 65px;
