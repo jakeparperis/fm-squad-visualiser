@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5VZPZE8HXV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5VZPZE8HXV');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM Squad Visualiser</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation_styles.css') }}">
+    <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/help-button.js') }}" defer></script>
+</head>
+
+<body data-theme="colour1">
+    <div class="background-rectangle">
+        <div class="navigation-container">
+            <div class="home-container" data-tooltip="Home">
+                <a href="{{ url_for('index') }}">
+                    <img class="home-image" src="{{ url_for('static', filename='img/misc/oi--home.png') }}" alt="">
+                </a>
+            </div>
+            <div class="squad-container" data-tooltip="{{ 'No squad data' if 'squad_data' not in session else 'Squad Overview' }}">
+                {% if 'squad_data' in session %}
+                    <a href="{{ url_for('squad_overview') }}">
+                {% else %}
+                    <span>
+                {% endif %}
+                        <img class="squad-image" src="{{ url_for('static', filename='img/misc/oi--people.png') }}" alt="">
+                {% if 'squad_data' in session %}
+                    </a>
+                {% else %}
+                    </span>
+                {% endif %}
+            </div>
+            <div class="builder-container" data-tooltip="{{ 'No squad data' if 'squad_data' not in session else 'Squad Builder' }}">
+                {% if 'squad_data' in session %}
+                    <a href="{{ url_for('squad_builder') }}">
+                {% else %}
+                    <span>
+                {% endif %}
+                        <img class="builder-image" src="{{ url_for('static', filename='img/misc/oi--wrench.png') }}" alt="">
+                {% if 'squad_data' in session %}
+                    </a>
+                {% else %}
+                    </span>
+                {% endif %}
+            </div>
+            <div class="help-container" data-tooltip="Help">
+                <button id="helpButton" class="help-button">
+                    <img class="help-image" src="{{ url_for('static', filename='img/misc/oi--question-mark.png') }}" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="reddit-container" data-tooltip="Reddit Guide">
+            <a href="https://www.reddit.com/r/footballmanagergames/comments/1gc2bdp/need_help_planning_your_squad_or_evaluating_your/" target="_blank">
+                <img class="reddit-image" src="{{ url_for('static', filename='img/misc/reddit-icon.png') }}" alt="">
+            </a>
+        </div>
+
+        <h1>FM Squad Visualiser</h1>
+
+        <!-- Flash handling -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".html">
+            <input class="upload-button" type="submit" value="Upload and go to squad">
+        </form>
+
+        <div class="help-section">
+            <div id="helpContent" class="help-content">
+                <h2>Features and Usage</h2>
+                <h3>Squad Overview:</h3>
+                <h4>• View your players by position, sorted by overall rating</h4>
+                <h4>• Click on players to go to their player info page</h4>
+                <h3>Player Info:</h3>
+                <h4>• Player card containing information about the player</h4>
+                <h4>• Graphic of the player's overall rating by position</h4>
+                <h4>• Summary of the player's career and season stats</h4>
+                <h3>Squad Builder:</h3>
+                <h4>• Scroll through the list of players and click on them to display their player card</h4>
+                <h4>• Drag players into positions on the pitch to select your squad</h4>
+                <h4>• Drag positions on the pitch to customise your formation</h4>
+                <h4>• Click on the save button to download an image of your squad</h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
